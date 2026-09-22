@@ -1,6 +1,6 @@
 # João Victor Diamantino Cardoso
 
-**Desenvolvedor sênior** na [1001 Negócios Imobiliários](https://1001imoveis.com) · Goiânia, GO — Brasil
+**Diretor de T.I** na [1001 Negócios Imobiliários](https://1001imoveis.com) · Goiânia, GO — Brasil
 
 Construo o software que roda a operação de uma imobiliária de loteamentos: cobrança, integração com o ERP, atendimento por WhatsApp, documentos. Trabalho perto do problema real — o sistema é usado todo dia por quem cobra, atende e assina.
 
