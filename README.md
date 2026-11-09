@@ -1,6 +1,6 @@
 # João Victor Diamantino Cardoso
 
-**Diretor de T.I** na [1001 Negócios Imobiliários](https://1001imoveis.com) · Estudante de **Análise e Desenvolvimento de Sistemas** na PUC Goiás · Goiânia, GO — Brasil
+**Auxiliar Administrativo** na CV ADM, desenvolvendo os sistemas internos da [1001 Negócios Imobiliários](https://1001imoveis.com) · Estudante de **Análise e Desenvolvimento de Sistemas** na PUC Goiás · Goiânia, GO — Brasil
 
 Construo o software que roda a operação de uma imobiliária de loteamentos: cobrança, integração com o ERP, atendimento por WhatsApp, financeiro e documentos. Trabalho perto do problema real: o sistema é usado todo dia por quem cobra, atende e assina.
 
