@@ -1,0 +1,13 @@
+{
+  "nome": "DiscordNodeStereo",
+  "paleta": {
+    "fundo": "#111317",
+    "primaria": "#FF6B35",
+    "secundaria": "#2EC4B6",
+    "texto": "#F2F2F2",
+    "acento": "#FFD166"
+  },
+  "fonte": "'Segoe UI',system-ui,sans-serif",
+  "logo": "DiscordNodeStereo.svg",
+  "conceito": "mesa de som: dois VUs, esquerdo e direito, batendo no talo"
+}

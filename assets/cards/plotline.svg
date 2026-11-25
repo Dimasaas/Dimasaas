@@ -1,31 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300" role="img" aria-label="Plotline: GeoJSON de lotes → planta em SVG (projeção, rotação, escala), com download do ArcGIS aberto de Goiânia.">
 <title>Plotline</title>
 <defs>
-<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a0418"/><stop offset="1" stop-color="#120726"/></linearGradient>
-<linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7C5CFF"/><stop offset="1" stop-color="#FF4FA3"/></linearGradient>
-<linearGradient id="t" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F5EEFF"/><stop offset="1" stop-color="#F5EEFF"/></linearGradient>
-<pattern id="p" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#7C5CFF" stroke-opacity=".09"/></pattern>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1B2B48"/><stop offset="1" stop-color="#D9482B"/></linearGradient>
 <clipPath id="c"><rect width="600" height="300" rx="18"/></clipPath>
 </defs>
 <style>
-svg{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
-.b{animation:corre 5s linear infinite}
+svg{font-family:Georgia, serif}
+.b{animation:corre 6s linear infinite}
 @keyframes corre{from{stroke-dashoffset:1000}to{stroke-dashoffset:0}}
-.s{animation:varre 6s ease-in-out infinite}
-@keyframes varre{from{transform:translateX(-300px)}to{transform:translateX(700px)}}
-.pt{animation:pisca 1.2s steps(1) infinite}
-@keyframes pisca{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.b{animation:none}}
 </style>
 <g clip-path="url(#c)">
-<rect width="600" height="300" fill="url(#bg)"/>
-<rect width="600" height="300" fill="url(#p)"/>
-<rect class="s" width="260" height="300" fill="#7C5CFF" opacity=".10"/>
-<text x="32" y="42" font-size="13" fill="#C3A8E6">github.com/Dimasaas/plotline</text>
-<circle cx="560" cy="37" r="6" fill="#CC342D"/>
-<text x="32" y="84" font-size="38" font-weight="700" fill="url(#t)">Plotline<tspan class="pt" fill="#FF4FA3">_</tspan></text>
-<text x="32" y="122" font-size="16" fill="#F5EEFF">GeoJSON de lotes → planta em SVG (projeção,</text><text x="32" y="146" font-size="16" fill="#F5EEFF">rotação, escala), com download do ArcGIS</text><text x="32" y="170" font-size="16" fill="#F5EEFF">aberto de Goiânia.</text>
-<g><rect x="32" y="244" width="54" height="26" rx="13" fill="#7C5CFF" fill-opacity=".16" stroke="#7C5CFF" stroke-opacity=".7"/><text x="59" y="262" text-anchor="middle" font-size="13" fill="#F5EEFF">Ruby</text></g><g><rect x="94" y="244" width="79" height="26" rx="13" fill="#7C5CFF" fill-opacity=".16" stroke="#7C5CFF" stroke-opacity=".7"/><text x="134" y="262" text-anchor="middle" font-size="13" fill="#F5EEFF">GeoJSON</text></g><g><rect x="181" y="244" width="46" height="26" rx="13" fill="#7C5CFF" fill-opacity=".16" stroke="#7C5CFF" stroke-opacity=".7"/><text x="204" y="262" text-anchor="middle" font-size="13" fill="#F5EEFF">SVG</text></g><g><rect x="235" y="244" width="71" height="26" rx="13" fill="#7C5CFF" fill-opacity=".16" stroke="#7C5CFF" stroke-opacity=".7"/><text x="270" y="262" text-anchor="middle" font-size="13" fill="#F5EEFF">ArcGIS</text></g><g><rect x="314" y="244" width="112" height="26" rx="13" fill="#FF4FA3" fill-opacity=".16" stroke="#FF4FA3" stroke-opacity=".7"/><text x="370" y="262" text-anchor="middle" font-size="13" fill="#F5EEFF">PolyForm NC</text></g>
+<rect width="600" height="300" fill="#F3EFE4"/>
+<rect width="600" height="6" fill="url(#g)"/>
+<circle cx="522" cy="78" r="70" fill="#5B7553" fill-opacity=".10"/>
+<image href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2IiB3aWR0aD0iMjU2IiBoZWlnaHQ9IjI1NiIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsbGVkYnk9InQiPg0KICA8dGl0bGUgaWQ9InQiPlBsb3RsaW5lOiBsb3RlIGNvbSBtYXJjbyBkZSBsZXZhbnRhbWVudG88L3RpdGxlPg0KICA8cmVjdCB4PSI4IiB5PSI4IiB3aWR0aD0iMjQwIiBoZWlnaHQ9IjI0MCIgcng9IjI2IiBmaWxsPSIjRjNFRkU0IiBzdHJva2U9IiMxQjJCNDgiIHN0cm9rZS13aWR0aD0iOCIvPg0KICA8cGF0aCBkPSJNNDAgOFYyNDhNODggOFYyNDhNMTM2IDhWMjQ4TTE4NCA4VjI0OE0yMzIgOFYyNDhNOCA0MEgyNDhNOCA4OEgyNDhNOCAxMzZIMjQ4TTggMTg0SDI0OE04IDIzMkgyNDgiIHN0cm9rZT0iIzZCNkI2QiIgc3Ryb2tlLW9wYWNpdHk9Ii4xOCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4NCiAgPHBhdGggZD0iTTYyIDE1MEw5OCA2NkwxODYgODRMMTk4IDE3OEwxMTYgMjAyWiIgZmlsbD0iIzVCNzU1MyIgZmlsbC1vcGFjaXR5PSIuMzUiIHN0cm9rZT0iIzFCMkI0OCIgc3Ryb2tlLXdpZHRoPSI3IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+DQogIDxwYXRoIGQ9Ik04MCAxMDhMMTQyIDEyME05MiAxNThMMTUyIDE3ME0xNDIgMTIwTDE1MiAxNzAiIHN0cm9rZT0iIzFCMkI0OCIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2Utb3BhY2l0eT0iLjYiIGZpbGw9Im5vbmUiLz4NCiAgPHBhdGggZD0iTTYyIDE1MEw5OCA2NkwxODYgODRMMTk4IDE3OEwxMTYgMjAyWiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRDk0ODJCIiBzdHJva2Utd2lkdGg9IjMuNSIgc3Ryb2tlLWRhc2hhcnJheT0iMTAgNSAyIDUiLz4NCiAgPGNpcmNsZSBjeD0iMTg2IiBjeT0iODQiIHI9IjkiIGZpbGw9IiNGM0VGRTQiIHN0cm9rZT0iIzFCMkI0OCIgc3Ryb2tlLXdpZHRoPSI0Ii8+DQogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE5OCAxNzgpIj4NCiAgICA8cGF0aCBkPSJNMCAwTC0xMyAtNDRIMTNaIiBmaWxsPSIjRDk0ODJCIi8+DQogICAgPGNpcmNsZSBjeT0iLTUyIiByPSIxNSIgZmlsbD0iI0Q5NDgyQiIgc3Ryb2tlPSIjMUIyQjQ4IiBzdHJva2Utd2lkdGg9IjQiLz4NCiAgICA8Y2lyY2xlIGN5PSItNTIiIHI9IjUiIGZpbGw9IiNGM0VGRTQiLz4NCiAgICA8Y2lyY2xlIHI9IjUiIGZpbGw9IiMxQjJCNDgiLz4NCiAgPC9nPg0KPC9zdmc+DQo=" x="470" y="26" width="104" height="104"/>
+<text x="32" y="46" font-size="13" fill="#1B2B48" fill-opacity=".72">github.com/Dimasaas/plotline</text>
+<text x="32" y="94" font-size="38" font-weight="700" fill="#1B2B48">Plotline</text>
+<text x="32" y="132" font-size="16" fill="#1B2B48">GeoJSON de lotes → planta em SVG (projeção,</text><text x="32" y="156" font-size="16" fill="#1B2B48">rotação, escala), com download do ArcGIS</text><text x="32" y="180" font-size="16" fill="#1B2B48">aberto de Goiânia.</text>
+<g><rect x="32" y="244" width="54" height="26" rx="13" fill="#1B2B48" fill-opacity=".14" stroke="#1B2B48" stroke-opacity=".8"/><text x="59" y="262" text-anchor="middle" font-size="13" fill="#1B2B48">Ruby</text></g><g><rect x="94" y="244" width="79" height="26" rx="13" fill="#1B2B48" fill-opacity=".14" stroke="#1B2B48" stroke-opacity=".8"/><text x="134" y="262" text-anchor="middle" font-size="13" fill="#1B2B48">GeoJSON</text></g><g><rect x="181" y="244" width="46" height="26" rx="13" fill="#1B2B48" fill-opacity=".14" stroke="#1B2B48" stroke-opacity=".8"/><text x="204" y="262" text-anchor="middle" font-size="13" fill="#1B2B48">SVG</text></g><g><rect x="235" y="244" width="71" height="26" rx="13" fill="#1B2B48" fill-opacity=".14" stroke="#1B2B48" stroke-opacity=".8"/><text x="270" y="262" text-anchor="middle" font-size="13" fill="#1B2B48">ArcGIS</text></g><g><rect x="314" y="244" width="112" height="26" rx="13" fill="#1B2B48" fill-opacity=".14" stroke="#1B2B48" stroke-opacity=".8"/><text x="370" y="262" text-anchor="middle" font-size="13" fill="#1B2B48">PolyForm NC</text></g>
 </g>
-<rect x="1.5" y="1.5" width="597" height="297" rx="17" fill="none" stroke="#7C5CFF" stroke-opacity=".35" stroke-width="1.5"/>
-<rect class="b" x="1.5" y="1.5" width="597" height="297" rx="17" fill="none" stroke="url(#g)" stroke-width="3" pathLength="1000" stroke-dasharray="190 810"/>
+<rect x="1.5" y="1.5" width="597" height="297" rx="17" fill="none" stroke="#1B2B48" stroke-opacity=".45" stroke-width="1.5"/>
+<rect class="b" x="1.5" y="1.5" width="597" height="297" rx="17" fill="none" stroke="url(#g)" stroke-width="3" pathLength="1000" stroke-dasharray="140 860"/>
 </svg>

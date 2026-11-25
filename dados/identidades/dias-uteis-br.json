@@ -1,0 +1,13 @@
+{
+  "nome": "dias-uteis-br",
+  "paleta": {
+    "fundo": "#F6F8F4",
+    "primaria": "#1E7F4F",
+    "secundaria": "#F2C14E",
+    "texto": "#1D2B24",
+    "acento": "#E4572E"
+  },
+  "fonte": "'Segoe UI',system-ui,sans-serif",
+  "logo": "dias-uteis-br.svg",
+  "conceito": "folhinha de calendário: úteis em verde, feriado em vermelho"
+}

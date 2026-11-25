@@ -1,0 +1,13 @@
+{
+  "nome": "pi-3b-gerenciador-de-tarefas",
+  "paleta": {
+    "fundo": "#FFFDF7",
+    "primaria": "#3A86FF",
+    "secundaria": "#FFBE0B",
+    "texto": "#22223B",
+    "acento": "#FB5607"
+  },
+  "fonte": "'Segoe UI',system-ui,sans-serif",
+  "logo": "pi-3b-gerenciador-de-tarefas.svg",
+  "conceito": "quadro de cortiça: post-its andando entre a fazer, fazendo e feito"
+}

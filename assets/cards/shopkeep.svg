@@ -1,31 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300" role="img" aria-label="Shopkeep: Bot de loja no Discord com tickets, pagamento plugável e setup idempotente.">
 <title>Shopkeep</title>
 <defs>
-<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a0418"/><stop offset="1" stop-color="#120726"/></linearGradient>
-<linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FF4FA3"/><stop offset="1" stop-color="#7C5CFF"/></linearGradient>
-<linearGradient id="t" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F5EEFF"/><stop offset="1" stop-color="#F5EEFF"/></linearGradient>
-<pattern id="p" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#FF4FA3" stroke-opacity=".09"/></pattern>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#A3E635"/><stop offset="1" stop-color="#FDE047"/></linearGradient>
 <clipPath id="c"><rect width="600" height="300" rx="18"/></clipPath>
 </defs>
 <style>
-svg{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
-.b{animation:corre 5s linear infinite}
+svg{font-family:'Trebuchet MS', 'Segoe UI', system-ui, sans-serif}
+.b{animation:corre 6s linear infinite}
 @keyframes corre{from{stroke-dashoffset:1000}to{stroke-dashoffset:0}}
-.s{animation:varre 6s ease-in-out infinite}
-@keyframes varre{from{transform:translateX(-300px)}to{transform:translateX(700px)}}
-.pt{animation:pisca 1.2s steps(1) infinite}
-@keyframes pisca{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.b{animation:none}}
 </style>
 <g clip-path="url(#c)">
-<rect width="600" height="300" fill="url(#bg)"/>
-<rect width="600" height="300" fill="url(#p)"/>
-<rect class="s" width="260" height="300" fill="#FF4FA3" opacity=".10"/>
-<text x="32" y="42" font-size="13" fill="#C3A8E6">github.com/Dimasaas/shopkeep</text>
-<circle cx="560" cy="37" r="6" fill="#3178C6"/>
-<text x="32" y="84" font-size="38" font-weight="700" fill="url(#t)">Shopkeep<tspan class="pt" fill="#7C5CFF">_</tspan></text>
-<text x="32" y="122" font-size="16" fill="#F5EEFF">Bot de loja no Discord com tickets, pagamento</text><text x="32" y="146" font-size="16" fill="#F5EEFF">plugável e setup idempotente.</text>
-<g><rect x="32" y="244" width="104" height="26" rx="13" fill="#FF4FA3" fill-opacity=".16" stroke="#FF4FA3" stroke-opacity=".7"/><text x="84" y="262" text-anchor="middle" font-size="13" fill="#F5EEFF">TypeScript</text></g><g><rect x="144" y="244" width="79" height="26" rx="13" fill="#FF4FA3" fill-opacity=".16" stroke="#FF4FA3" stroke-opacity=".7"/><text x="184" y="262" text-anchor="middle" font-size="13" fill="#F5EEFF">Discord</text></g><g><rect x="231" y="244" width="79" height="26" rx="13" fill="#FF4FA3" fill-opacity=".16" stroke="#FF4FA3" stroke-opacity=".7"/><text x="270" y="262" text-anchor="middle" font-size="13" fill="#F5EEFF">Tickets</text></g><g><rect x="318" y="244" width="112" height="26" rx="13" fill="#FF4FA3" fill-opacity=".16" stroke="#FF4FA3" stroke-opacity=".7"/><text x="374" y="262" text-anchor="middle" font-size="13" fill="#F5EEFF">PolyForm NC</text></g>
+<rect width="600" height="300" fill="#2D1B4E"/>
+<rect width="600" height="6" fill="url(#g)"/>
+<circle cx="522" cy="78" r="70" fill="#F472B6" fill-opacity=".16"/>
+<image href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2IiB3aWR0aD0iMjU2IiBoZWlnaHQ9IjI1NiI+CiAgPHRpdGxlPlNob3BrZWVwOiB0b2xkbyBsaXN0cmFkbyBzb2JyZSB1bSBiYWxjw6NvIGVtIGZvcm1hIGRlIGJhbMOjbyBkZSBjb252ZXJzYSBjb20gdW1hIHNhY29sYTwvdGl0bGU+CiAgPGRlZnM+CiAgICA8Y2xpcFBhdGggaWQ9InRvbGRvIj48cGF0aCBkPSJNNjIgNDYgSDE5NCBMMjIyIDExMCBIMzQgWiIvPjwvY2xpcFBhdGg+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2IiByeD0iNTYiIGZpbGw9IiMyRDFCNEUiLz4KICA8IS0tIHRvbGRvIC0tPgogIDxyZWN0IHg9IjUyIiB5PSIzNCIgd2lkdGg9IjE1MiIgaGVpZ2h0PSIxNCIgcng9IjciIGZpbGw9IiNBM0U2MzUiLz4KICA8ZyBjbGlwLXBhdGg9InVybCgjdG9sZG8pIj4KICAgIDxyZWN0IHg9IjM0IiB5PSI0NiIgd2lkdGg9IjMxIiBoZWlnaHQ9IjcwIiBmaWxsPSIjRjQ3MkI2Ii8+CiAgICA8cmVjdCB4PSI2NSIgeT0iNDYiIHdpZHRoPSIzMSIgaGVpZ2h0PSI3MCIgZmlsbD0iI0ZGRjdFNiIvPgogICAgPHJlY3QgeD0iOTYiIHk9IjQ2IiB3aWR0aD0iMzEiIGhlaWdodD0iNzAiIGZpbGw9IiNGNDcyQjYiLz4KICAgIDxyZWN0IHg9IjEyNyIgeT0iNDYiIHdpZHRoPSIzMSIgaGVpZ2h0PSI3MCIgZmlsbD0iI0ZGRjdFNiIvPgogICAgPHJlY3QgeD0iMTU4IiB5PSI0NiIgd2lkdGg9IjMxIiBoZWlnaHQ9IjcwIiBmaWxsPSIjRjQ3MkI2Ii8+CiAgICA8cmVjdCB4PSIxODkiIHk9IjQ2IiB3aWR0aD0iMzMiIGhlaWdodD0iNzAiIGZpbGw9IiNGRkY3RTYiLz4KICA8L2c+CiAgPGc+CiAgICA8Y2lyY2xlIGN4PSI0OS41IiBjeT0iMTEwIiByPSIxNS41IiBmaWxsPSIjRjQ3MkI2Ii8+CiAgICA8Y2lyY2xlIGN4PSI4MC41IiBjeT0iMTEwIiByPSIxNS41IiBmaWxsPSIjRkZGN0U2Ii8+CiAgICA8Y2lyY2xlIGN4PSIxMTEuNSIgY3k9IjExMCIgcj0iMTUuNSIgZmlsbD0iI0Y0NzJCNiIvPgogICAgPGNpcmNsZSBjeD0iMTQyLjUiIGN5PSIxMTAiIHI9IjE1LjUiIGZpbGw9IiNGRkY3RTYiLz4KICAgIDxjaXJjbGUgY3g9IjE3My41IiBjeT0iMTEwIiByPSIxNS41IiBmaWxsPSIjRjQ3MkI2Ii8+CiAgICA8Y2lyY2xlIGN4PSIyMDUiIGN5PSIxMTAiIHI9IjE1LjUiIGZpbGw9IiNGRkY3RTYiLz4KICA8L2c+CiAgPCEtLSBiYWxjw6NvIGVtIGZvcm1hIGRlIGJhbMOjbyBkZSBjb252ZXJzYSAtLT4KICA8cGF0aCBkPSJNNTAgMTM4IEgyMDYgUTIyMiAxMzggMjIyIDE1NCBWMTk2IFEyMjIgMjEyIDIwNiAyMTIgSDExMCBMNzQgMjM4IEw4MiAyMTIgSDY2IFE1MCAyMTIgNTAgMTk2IFoiIGZpbGw9IiNGRkY3RTYiLz4KICA8IS0tIHNhY29sYSAtLT4KICA8cGF0aCBkPSJNMTA0IDE2MCBIMTUyIEwxNTYgMjA0IEgxMDAgWiIgZmlsbD0iI0EzRTYzNSIgc3Ryb2tlPSIjMkQxQjRFIiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8cGF0aCBkPSJNMTE0IDE2MCBWMTU0IFExMjggMTQwIDE0MiAxNTQgVjE2MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkQxQjRFIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogIDwhLS0gZXRpcXVldGEgZGUgcHJlw6dvIC0tPgogIDxwYXRoIGQ9Ik0xNzAgMTU2IEgxOTggTDIwNiAxNjYgTDE5OCAxNzYgSDE3MCBaIiBmaWxsPSIjRkRFMDQ3IiBzdHJva2U9IiMyRDFCNEUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgogIDxjaXJjbGUgY3g9IjE5OCIgY3k9IjE2NiIgcj0iMi41IiBmaWxsPSIjMkQxQjRFIi8+Cjwvc3ZnPgo=" x="470" y="26" width="104" height="104"/>
+<text x="32" y="46" font-size="13" fill="#FFF7E6" fill-opacity=".72">github.com/Dimasaas/shopkeep</text>
+<text x="32" y="94" font-size="38" font-weight="700" fill="#A3E635">Shopkeep</text>
+<text x="32" y="132" font-size="16" fill="#FFF7E6">Bot de loja no Discord com tickets,</text><text x="32" y="156" font-size="16" fill="#FFF7E6">pagamento plugável e setup idempotente.</text>
+<g><rect x="32" y="244" width="104" height="26" rx="13" fill="#A3E635" fill-opacity=".14" stroke="#A3E635" stroke-opacity=".8"/><text x="84" y="262" text-anchor="middle" font-size="13" fill="#FFF7E6">TypeScript</text></g><g><rect x="144" y="244" width="79" height="26" rx="13" fill="#A3E635" fill-opacity=".14" stroke="#A3E635" stroke-opacity=".8"/><text x="184" y="262" text-anchor="middle" font-size="13" fill="#FFF7E6">Discord</text></g><g><rect x="231" y="244" width="79" height="26" rx="13" fill="#A3E635" fill-opacity=".14" stroke="#A3E635" stroke-opacity=".8"/><text x="270" y="262" text-anchor="middle" font-size="13" fill="#FFF7E6">Tickets</text></g><g><rect x="318" y="244" width="112" height="26" rx="13" fill="#A3E635" fill-opacity=".14" stroke="#A3E635" stroke-opacity=".8"/><text x="374" y="262" text-anchor="middle" font-size="13" fill="#FFF7E6">PolyForm NC</text></g>
 </g>
-<rect x="1.5" y="1.5" width="597" height="297" rx="17" fill="none" stroke="#FF4FA3" stroke-opacity=".35" stroke-width="1.5"/>
-<rect class="b" x="1.5" y="1.5" width="597" height="297" rx="17" fill="none" stroke="url(#g)" stroke-width="3" pathLength="1000" stroke-dasharray="190 810"/>
+<rect x="1.5" y="1.5" width="597" height="297" rx="17" fill="none" stroke="#A3E635" stroke-opacity=".45" stroke-width="1.5"/>
+<rect class="b" x="1.5" y="1.5" width="597" height="297" rx="17" fill="none" stroke="url(#g)" stroke-width="3" pathLength="1000" stroke-dasharray="140 860"/>
 </svg>

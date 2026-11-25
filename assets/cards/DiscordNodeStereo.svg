@@ -1,31 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300" role="img" aria-label="DiscordNodeStereo: Microfone estéreo a 512 kbps no Discord.">
 <title>DiscordNodeStereo</title>
 <defs>
-<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a0418"/><stop offset="1" stop-color="#120726"/></linearGradient>
-<linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7C5CFF"/><stop offset="1" stop-color="#FF4FA3"/></linearGradient>
-<linearGradient id="t" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F5EEFF"/><stop offset="1" stop-color="#F5EEFF"/></linearGradient>
-<pattern id="p" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#7C5CFF" stroke-opacity=".09"/></pattern>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FF6B35"/><stop offset="1" stop-color="#FFD166"/></linearGradient>
 <clipPath id="c"><rect width="600" height="300" rx="18"/></clipPath>
 </defs>
 <style>
-svg{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
-.b{animation:corre 5s linear infinite}
+svg{font-family:'Segoe UI',system-ui,sans-serif}
+.b{animation:corre 6s linear infinite}
 @keyframes corre{from{stroke-dashoffset:1000}to{stroke-dashoffset:0}}
-.s{animation:varre 6s ease-in-out infinite}
-@keyframes varre{from{transform:translateX(-300px)}to{transform:translateX(700px)}}
-.pt{animation:pisca 1.2s steps(1) infinite}
-@keyframes pisca{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.b{animation:none}}
 </style>
 <g clip-path="url(#c)">
-<rect width="600" height="300" fill="url(#bg)"/>
-<rect width="600" height="300" fill="url(#p)"/>
-<rect class="s" width="260" height="300" fill="#7C5CFF" opacity=".10"/>
-<text x="32" y="42" font-size="13" fill="#C3A8E6">github.com/Dimasaas/DiscordNodeStereo</text>
-<circle cx="560" cy="37" r="6" fill="#9B4F96"/>
-<text x="32" y="84" font-size="38" font-weight="700" fill="url(#t)">DiscordNodeStereo<tspan class="pt" fill="#FF4FA3">_</tspan></text>
-<text x="32" y="122" font-size="16" fill="#F5EEFF">Microfone estéreo a 512 kbps no Discord.</text>
-<g><rect x="32" y="244" width="38" height="26" rx="13" fill="#7C5CFF" fill-opacity=".16" stroke="#7C5CFF" stroke-opacity=".7"/><text x="51" y="262" text-anchor="middle" font-size="13" fill="#F5EEFF">C#</text></g><g><rect x="78" y="244" width="79" height="26" rx="13" fill="#7C5CFF" fill-opacity=".16" stroke="#7C5CFF" stroke-opacity=".7"/><text x="118" y="262" text-anchor="middle" font-size="13" fill="#F5EEFF">Discord</text></g>
+<rect width="600" height="300" fill="#111317"/>
+<rect width="600" height="6" fill="url(#g)"/>
+<circle cx="522" cy="78" r="70" fill="#2EC4B6" fill-opacity=".16"/>
+<image href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2Ij48cmVjdCB4PSIyOCIgeT0iMjgiIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiByeD0iMjgiIGZpbGw9IiMxQzFGMjYiLz48Zz48cmVjdCB4PSI2MiIgeT0iMTUwIiB3aWR0aD0iNDAiIGhlaWdodD0iMTgiIHJ4PSI0IiBmaWxsPSIjMkVDNEI2Ii8+PHJlY3QgeD0iNjIiIHk9IjEyNiIgd2lkdGg9IjQwIiBoZWlnaHQ9IjE4IiByeD0iNCIgZmlsbD0iIzJFQzRCNiIvPjxyZWN0IHg9IjYyIiB5PSIxMDIiIHdpZHRoPSI0MCIgaGVpZ2h0PSIxOCIgcng9IjQiIGZpbGw9IiNGRkQxNjYiLz48cmVjdCB4PSI2MiIgeT0iNzgiIHdpZHRoPSI0MCIgaGVpZ2h0PSIxOCIgcng9IjQiIGZpbGw9IiNGRjZCMzUiLz48cmVjdCB4PSIxNTQiIHk9IjE1MCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjE4IiByeD0iNCIgZmlsbD0iIzJFQzRCNiIvPjxyZWN0IHg9IjE1NCIgeT0iMTI2IiB3aWR0aD0iNDAiIGhlaWdodD0iMTgiIHJ4PSI0IiBmaWxsPSIjMkVDNEI2Ii8+PHJlY3QgeD0iMTU0IiB5PSIxMDIiIHdpZHRoPSI0MCIgaGVpZ2h0PSIxOCIgcng9IjQiIGZpbGw9IiNGRkQxNjYiLz48cmVjdCB4PSIxNTQiIHk9Ijc4IiB3aWR0aD0iNDAiIGhlaWdodD0iMTgiIHJ4PSI0IiBmaWxsPSIjM0EzRjRCIi8+PC9nPjx0ZXh0IHg9IjgyIiB5PSIyMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJTZWdvZSBVSSxzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjIyIiBmaWxsPSIjRjJGMkYyIj5MPC90ZXh0Pjx0ZXh0IHg9IjE3NCIgeT0iMjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iU2Vnb2UgVUksc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9IjcwMCIgZm9udC1zaXplPSIyMiIgZmlsbD0iI0YyRjJGMiI+UjwvdGV4dD48L3N2Zz4=" x="470" y="26" width="104" height="104"/>
+<text x="32" y="46" font-size="13" fill="#F2F2F2" fill-opacity=".72">github.com/Dimasaas/DiscordNodeStereo</text>
+<text x="32" y="94" font-size="37" font-weight="700" fill="#FF6B35">DiscordNodeStereo</text>
+<text x="32" y="132" font-size="16" fill="#F2F2F2">Microfone estéreo a 512 kbps no Discord.</text>
+<g><rect x="32" y="244" width="38" height="26" rx="13" fill="#FF6B35" fill-opacity=".14" stroke="#FF6B35" stroke-opacity=".8"/><text x="51" y="262" text-anchor="middle" font-size="13" fill="#F2F2F2">C#</text></g><g><rect x="78" y="244" width="79" height="26" rx="13" fill="#FF6B35" fill-opacity=".14" stroke="#FF6B35" stroke-opacity=".8"/><text x="118" y="262" text-anchor="middle" font-size="13" fill="#F2F2F2">Discord</text></g>
 </g>
-<rect x="1.5" y="1.5" width="597" height="297" rx="17" fill="none" stroke="#7C5CFF" stroke-opacity=".35" stroke-width="1.5"/>
-<rect class="b" x="1.5" y="1.5" width="597" height="297" rx="17" fill="none" stroke="url(#g)" stroke-width="3" pathLength="1000" stroke-dasharray="190 810"/>
+<rect x="1.5" y="1.5" width="597" height="297" rx="17" fill="none" stroke="#FF6B35" stroke-opacity=".45" stroke-width="1.5"/>
+<rect class="b" x="1.5" y="1.5" width="597" height="297" rx="17" fill="none" stroke="url(#g)" stroke-width="3" pathLength="1000" stroke-dasharray="140 860"/>
 </svg>

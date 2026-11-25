@@ -1,31 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300" role="img" aria-label="Breather: Freio global cooperativo para APIs que engasgam em 503.">
 <title>Breather</title>
 <defs>
-<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a0418"/><stop offset="1" stop-color="#120726"/></linearGradient>
-<linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FF9CC9"/><stop offset="1" stop-color="#4D8BFF"/></linearGradient>
-<linearGradient id="t" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F5EEFF"/><stop offset="1" stop-color="#F5EEFF"/></linearGradient>
-<pattern id="p" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#FF9CC9" stroke-opacity=".09"/></pattern>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5EEAD4"/><stop offset="1" stop-color="#FB7185"/></linearGradient>
 <clipPath id="c"><rect width="600" height="300" rx="18"/></clipPath>
 </defs>
 <style>
-svg{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
-.b{animation:corre 5s linear infinite}
+svg{font-family:Nunito, 'Segoe UI', system-ui, sans-serif}
+.b{animation:corre 6s linear infinite}
 @keyframes corre{from{stroke-dashoffset:1000}to{stroke-dashoffset:0}}
-.s{animation:varre 6s ease-in-out infinite}
-@keyframes varre{from{transform:translateX(-300px)}to{transform:translateX(700px)}}
-.pt{animation:pisca 1.2s steps(1) infinite}
-@keyframes pisca{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.b{animation:none}}
 </style>
 <g clip-path="url(#c)">
-<rect width="600" height="300" fill="url(#bg)"/>
-<rect width="600" height="300" fill="url(#p)"/>
-<rect class="s" width="260" height="300" fill="#FF9CC9" opacity=".10"/>
-<text x="32" y="42" font-size="13" fill="#C3A8E6">github.com/Dimasaas/breather</text>
-<circle cx="560" cy="37" r="6" fill="#CC342D"/>
-<text x="32" y="84" font-size="38" font-weight="700" fill="url(#t)">Breather<tspan class="pt" fill="#4D8BFF">_</tspan></text>
-<text x="32" y="122" font-size="16" fill="#F5EEFF">Freio global cooperativo para APIs que</text><text x="32" y="146" font-size="16" fill="#F5EEFF">engasgam em 503.</text>
-<g><rect x="32" y="244" width="54" height="26" rx="13" fill="#FF9CC9" fill-opacity=".16" stroke="#FF9CC9" stroke-opacity=".7"/><text x="59" y="262" text-anchor="middle" font-size="13" fill="#F5EEFF">Ruby</text></g><g><rect x="94" y="244" width="87" height="26" rx="13" fill="#FF9CC9" fill-opacity=".16" stroke="#FF9CC9" stroke-opacity=".7"/><text x="138" y="262" text-anchor="middle" font-size="13" fill="#F5EEFF">HTTP 503</text></g><g><rect x="189" y="244" width="112" height="26" rx="13" fill="#FF9CC9" fill-opacity=".16" stroke="#FF9CC9" stroke-opacity=".7"/><text x="245" y="262" text-anchor="middle" font-size="13" fill="#F5EEFF">Cooperativo</text></g><g><rect x="309" y="244" width="112" height="26" rx="13" fill="#FF4FA3" fill-opacity=".16" stroke="#FF4FA3" stroke-opacity=".7"/><text x="365" y="262" text-anchor="middle" font-size="13" fill="#F5EEFF">PolyForm NC</text></g>
+<rect width="600" height="300" fill="#0B2B2E"/>
+<rect width="600" height="6" fill="url(#g)"/>
+<circle cx="522" cy="78" r="70" fill="#14B8A6" fill-opacity=".16"/>
+<image href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2IiB3aWR0aD0iMjU2IiBoZWlnaHQ9IjI1NiIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJCcmVhdGhlcjogZHVhcyBiYXJyYXMgZGUgcGF1c2EgZGVudHJvIGRlIHVtIGPDrXJjdWxvIGF0cmF2ZXNzYWRvIHBvciB1bWEgb25kYSI+CiAgPHRpdGxlPkJyZWF0aGVyPC90aXRsZT4KICA8ZGVmcz48Y2xpcFBhdGggaWQ9ImMiPjxjaXJjbGUgY3g9IjEyOCIgY3k9IjEyOCIgcj0iODQiLz48L2NsaXBQYXRoPjwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMjU2IiBoZWlnaHQ9IjI1NiIgcng9IjU2IiBmaWxsPSIjMEIyQjJFIi8+CiAgPGNpcmNsZSBjeD0iMTI4IiBjeT0iMTI4IiByPSI5NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNUVFQUQ0IiBzdHJva2Utd2lkdGg9IjEwIi8+CiAgPGNpcmNsZSBjeD0iMTI4IiBjeT0iMTI4IiByPSI4NCIgZmlsbD0iIzBCMkIyRSIvPgogIDxnIGNsaXAtcGF0aD0idXJsKCNjKSI+PHBhdGggZD0iTTMwLjAgMTI4LjAgTDM0LjAgMTMzLjYgTDM4LjAgMTM4LjggTDQyLjAgMTQzLjMgTDQ2LjAgMTQ2LjggTDUwLjAgMTQ5LjEgTDU0LjAgMTUwLjAgTDU4LjAgMTQ5LjQgTDYyLjAgMTQ3LjUgTDY2LjAgMTQ0LjMgTDcwLjAgMTQwLjAgTDc0LjAgMTM0LjkgTDc4LjAgMTI5LjQgTDgyLjAgMTIzLjggTDg2LjAgMTE4LjUgTDkwLjAgMTEzLjcgTDk0LjAgMTEwLjAgTDk4LjAgMTA3LjQgTDEwMi4wIDEwNi4xIEwxMDYuMCAxMDYuMyBMMTEwLjAgMTA3LjkgTDExNC4wIDExMC44IEwxMTguMCAxMTQuOCBMMTIyLjAgMTE5LjcgTDEyNi4wIDEyNS4yIEwxMzAuMCAxMzAuOCBMMTM0LjAgMTM2LjMgTDEzOC4wIDE0MS4yIEwxNDIuMCAxNDUuMiBMMTQ2LjAgMTQ4LjEgTDE1MC4wIDE0OS43IEwxNTQuMCAxNDkuOSBMMTU4LjAgMTQ4LjYgTDE2Mi4wIDE0Ni4wIEwxNjYuMCAxNDIuMyBMMTcwLjAgMTM3LjUgTDE3NC4wIDEzMi4yIEwxNzguMCAxMjYuNiBMMTgyLjAgMTIxLjEgTDE4Ni4wIDExNi4wIEwxOTAuMCAxMTEuNyBMMTk0LjAgMTA4LjUgTDE5OC4wIDEwNi42IEwyMDIuMCAxMDYuMCBMMjA2LjAgMTA2LjkgTDIxMC4wIDEwOS4yIEwyMTQuMCAxMTIuNyBMMjE4LjAgMTE3LjIgTDIyMi4wIDEyMi40IEwyMjYuMCAxMjguMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTRCOEE2IiBzdHJva2Utd2lkdGg9IjciIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvZz4KICA8cmVjdCB4PSI5NiIgeT0iODQiIHdpZHRoPSIyMiIgaGVpZ2h0PSI4OCIgcng9IjExIiBmaWxsPSIjRjFGNUYwIi8+CiAgPHJlY3QgeD0iMTM4IiB5PSI4NCIgd2lkdGg9IjIyIiBoZWlnaHQ9Ijg4IiByeD0iMTEiIGZpbGw9IiNGMUY1RjAiLz4KPC9zdmc+Cg==" x="470" y="26" width="104" height="104"/>
+<text x="32" y="46" font-size="13" fill="#F1F5F0" fill-opacity=".72">github.com/Dimasaas/breather</text>
+<text x="32" y="94" font-size="38" font-weight="700" fill="#5EEAD4">Breather</text>
+<text x="32" y="132" font-size="16" fill="#F1F5F0">Freio global cooperativo para APIs que</text><text x="32" y="156" font-size="16" fill="#F1F5F0">engasgam em 503.</text>
+<g><rect x="32" y="244" width="54" height="26" rx="13" fill="#5EEAD4" fill-opacity=".14" stroke="#5EEAD4" stroke-opacity=".8"/><text x="59" y="262" text-anchor="middle" font-size="13" fill="#F1F5F0">Ruby</text></g><g><rect x="94" y="244" width="87" height="26" rx="13" fill="#5EEAD4" fill-opacity=".14" stroke="#5EEAD4" stroke-opacity=".8"/><text x="138" y="262" text-anchor="middle" font-size="13" fill="#F1F5F0">HTTP 503</text></g><g><rect x="189" y="244" width="112" height="26" rx="13" fill="#5EEAD4" fill-opacity=".14" stroke="#5EEAD4" stroke-opacity=".8"/><text x="245" y="262" text-anchor="middle" font-size="13" fill="#F1F5F0">Cooperativo</text></g><g><rect x="309" y="244" width="112" height="26" rx="13" fill="#5EEAD4" fill-opacity=".14" stroke="#5EEAD4" stroke-opacity=".8"/><text x="365" y="262" text-anchor="middle" font-size="13" fill="#F1F5F0">PolyForm NC</text></g>
 </g>
-<rect x="1.5" y="1.5" width="597" height="297" rx="17" fill="none" stroke="#FF9CC9" stroke-opacity=".35" stroke-width="1.5"/>
-<rect class="b" x="1.5" y="1.5" width="597" height="297" rx="17" fill="none" stroke="url(#g)" stroke-width="3" pathLength="1000" stroke-dasharray="190 810"/>
+<rect x="1.5" y="1.5" width="597" height="297" rx="17" fill="none" stroke="#5EEAD4" stroke-opacity=".45" stroke-width="1.5"/>
+<rect class="b" x="1.5" y="1.5" width="597" height="297" rx="17" fill="none" stroke="url(#g)" stroke-width="3" pathLength="1000" stroke-dasharray="140 860"/>
 </svg>

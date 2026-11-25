@@ -1,31 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300" role="img" aria-label="Breeze: Daemon de ventoinha para MacBook com Linux, o servidor do escritório.">
 <title>Breeze</title>
 <defs>
-<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a0418"/><stop offset="1" stop-color="#120726"/></linearGradient>
-<linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4D8BFF"/><stop offset="1" stop-color="#FF9CC9"/></linearGradient>
-<linearGradient id="t" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F5EEFF"/><stop offset="1" stop-color="#F5EEFF"/></linearGradient>
-<pattern id="p" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#4D8BFF" stroke-opacity=".09"/></pattern>
+<linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#38BDF8"/><stop offset="1" stop-color="#FACC15"/></linearGradient>
 <clipPath id="c"><rect width="600" height="300" rx="18"/></clipPath>
 </defs>
 <style>
-svg{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
-.b{animation:corre 5s linear infinite}
+svg{font-family:'Segoe UI', 'Helvetica Neue', system-ui, sans-serif}
+.b{animation:corre 6s linear infinite}
 @keyframes corre{from{stroke-dashoffset:1000}to{stroke-dashoffset:0}}
-.s{animation:varre 6s ease-in-out infinite}
-@keyframes varre{from{transform:translateX(-300px)}to{transform:translateX(700px)}}
-.pt{animation:pisca 1.2s steps(1) infinite}
-@keyframes pisca{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.b{animation:none}}
 </style>
 <g clip-path="url(#c)">
-<rect width="600" height="300" fill="url(#bg)"/>
-<rect width="600" height="300" fill="url(#p)"/>
-<rect class="s" width="260" height="300" fill="#4D8BFF" opacity=".10"/>
-<text x="32" y="42" font-size="13" fill="#C3A8E6">github.com/Dimasaas/breeze</text>
-<circle cx="560" cy="37" r="6" fill="#3572A5"/>
-<text x="32" y="84" font-size="38" font-weight="700" fill="url(#t)">Breeze<tspan class="pt" fill="#FF9CC9">_</tspan></text>
-<text x="32" y="122" font-size="16" fill="#F5EEFF">Daemon de ventoinha para MacBook com Linux, o</text><text x="32" y="146" font-size="16" fill="#F5EEFF">servidor do escritório.</text>
-<g><rect x="32" y="244" width="71" height="26" rx="13" fill="#4D8BFF" fill-opacity=".16" stroke="#4D8BFF" stroke-opacity=".7"/><text x="68" y="262" text-anchor="middle" font-size="13" fill="#F5EEFF">Python</text></g><g><rect x="111" y="244" width="63" height="26" rx="13" fill="#4D8BFF" fill-opacity=".16" stroke="#4D8BFF" stroke-opacity=".7"/><text x="142" y="262" text-anchor="middle" font-size="13" fill="#F5EEFF">Linux</text></g><g><rect x="182" y="244" width="79" height="26" rx="13" fill="#4D8BFF" fill-opacity=".16" stroke="#4D8BFF" stroke-opacity=".7"/><text x="222" y="262" text-anchor="middle" font-size="13" fill="#F5EEFF">systemd</text></g><g><rect x="269" y="244" width="112" height="26" rx="13" fill="#FF4FA3" fill-opacity=".16" stroke="#FF4FA3" stroke-opacity=".7"/><text x="325" y="262" text-anchor="middle" font-size="13" fill="#F5EEFF">PolyForm NC</text></g>
+<rect width="600" height="300" fill="#0C2D48"/>
+<rect width="600" height="6" fill="url(#g)"/>
+<circle cx="522" cy="78" r="70" fill="#F97316" fill-opacity=".16"/>
+<image href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2IiB3aWR0aD0iMjU2IiBoZWlnaHQ9IjI1NiI+CiAgPHRpdGxlPkJyZWV6ZTogdmVudG9pbmhhIGRlIGNpbmNvIHDDoXMgY29tIGxpbmhhIGRlIHZlbnRvPC90aXRsZT4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0idGVybWljbyIgeDE9IjAiIHkxPSIxIiB4Mj0iMSIgeTI9IjAiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMzOEJERjgiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjUiIHN0b3AtY29sb3I9IiNGQUNDMTUiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjgiIHN0b3AtY29sb3I9IiNGOTczMTYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjREMyNjI2Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHBhdGggaWQ9InBhIiBkPSJNMTI4IDExOCBDMTA4IDk4IDEwNiA2MiAxMzAgNDIgQzE1NCA2MiAxNTIgOTggMTM0IDEyMCBaIi8+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2IiByeD0iNTYiIGZpbGw9IiMwQzJENDgiLz4KICA8Y2lyY2xlIGN4PSIxMjgiIGN5PSIxMjgiIHI9IjkyIiBmaWxsPSJub25lIiBzdHJva2U9IiMzOEJERjgiIHN0cm9rZS1vcGFjaXR5PSIwLjM1IiBzdHJva2Utd2lkdGg9IjMiLz4KICA8ZyBmaWxsPSIjRUFGNkZGIiBzdHJva2U9IiMzOEJERjgiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CiAgICA8dXNlIGhyZWY9IiNwYSIvPgogICAgPHVzZSBocmVmPSIjcGEiIHRyYW5zZm9ybT0icm90YXRlKDcyIDEyOCAxMjgpIi8+CiAgICA8dXNlIGhyZWY9IiNwYSIgdHJhbnNmb3JtPSJyb3RhdGUoMTQ0IDEyOCAxMjgpIi8+CiAgICA8dXNlIGhyZWY9IiNwYSIgdHJhbnNmb3JtPSJyb3RhdGUoMjE2IDEyOCAxMjgpIi8+CiAgICA8dXNlIGhyZWY9IiNwYSIgdHJhbnNmb3JtPSJyb3RhdGUoMjg4IDEyOCAxMjgpIi8+CiAgPC9nPgogIDxjaXJjbGUgY3g9IjEyOCIgY3k9IjEyOCIgcj0iMTciIGZpbGw9IiMwQzJENDgiIHN0cm9rZT0iIzM4QkRGOCIgc3Ryb2tlLXdpZHRoPSI1Ii8+CiAgPGNpcmNsZSBjeD0iMTI4IiBjeT0iMTI4IiByPSI2IiBmaWxsPSIjMzhCREY4Ii8+CiAgPCEtLSBsaW5oYSBkZSB2ZW50byBzYWluZG8gZGEgdmVudG9pbmhhIC0tPgogIDxwYXRoIGQ9Ik0xNzYgMjA2IEMyMDQgMjA2IDIyNCAyMDAgMjMyIDE5MCBDMjQwIDE3OCAyMjYgMTY4IDIxNiAxNzgiIGZpbGw9Im5vbmUiIHN0cm9rZT0idXJsKCN0ZXJtaWNvKSIgc3Ryb2tlLXdpZHRoPSI5IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8cGF0aCBkPSJNMTQ4IDIyNiBDMTc4IDIzMCAyMDYgMjI2IDIxOCAyMTgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzM4QkRGOCIgc3Ryb2tlLXdpZHRoPSI2IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1vcGFjaXR5PSIwLjgiLz4KPC9zdmc+Cg==" x="470" y="26" width="104" height="104"/>
+<text x="32" y="46" font-size="13" fill="#EAF6FF" fill-opacity=".72">github.com/Dimasaas/breeze</text>
+<text x="32" y="94" font-size="38" font-weight="700" fill="#38BDF8">Breeze</text>
+<text x="32" y="132" font-size="16" fill="#EAF6FF">Daemon de ventoinha para MacBook com Linux,</text><text x="32" y="156" font-size="16" fill="#EAF6FF">o servidor do escritório.</text>
+<g><rect x="32" y="244" width="71" height="26" rx="13" fill="#38BDF8" fill-opacity=".14" stroke="#38BDF8" stroke-opacity=".8"/><text x="68" y="262" text-anchor="middle" font-size="13" fill="#EAF6FF">Python</text></g><g><rect x="111" y="244" width="63" height="26" rx="13" fill="#38BDF8" fill-opacity=".14" stroke="#38BDF8" stroke-opacity=".8"/><text x="142" y="262" text-anchor="middle" font-size="13" fill="#EAF6FF">Linux</text></g><g><rect x="182" y="244" width="79" height="26" rx="13" fill="#38BDF8" fill-opacity=".14" stroke="#38BDF8" stroke-opacity=".8"/><text x="222" y="262" text-anchor="middle" font-size="13" fill="#EAF6FF">systemd</text></g><g><rect x="269" y="244" width="112" height="26" rx="13" fill="#38BDF8" fill-opacity=".14" stroke="#38BDF8" stroke-opacity=".8"/><text x="325" y="262" text-anchor="middle" font-size="13" fill="#EAF6FF">PolyForm NC</text></g>
 </g>
-<rect x="1.5" y="1.5" width="597" height="297" rx="17" fill="none" stroke="#4D8BFF" stroke-opacity=".35" stroke-width="1.5"/>
-<rect class="b" x="1.5" y="1.5" width="597" height="297" rx="17" fill="none" stroke="url(#g)" stroke-width="3" pathLength="1000" stroke-dasharray="190 810"/>
+<rect x="1.5" y="1.5" width="597" height="297" rx="17" fill="none" stroke="#38BDF8" stroke-opacity=".45" stroke-width="1.5"/>
+<rect class="b" x="1.5" y="1.5" width="597" height="297" rx="17" fill="none" stroke="url(#g)" stroke-width="3" pathLength="1000" stroke-dasharray="140 860"/>
 </svg>

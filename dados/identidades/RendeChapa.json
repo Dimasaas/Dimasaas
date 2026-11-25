@@ -1,0 +1,13 @@
+{
+  "nome": "RendeChapa",
+  "paleta": {
+    "fundo": "#2A1E14",
+    "primaria": "#E9B872",
+    "secundaria": "#8C5A2B",
+    "texto": "#FFF4E3",
+    "acento": "#7BD389"
+  },
+  "fonte": "'Trebuchet MS','Segoe UI',sans-serif",
+  "logo": "RendeChapa.svg",
+  "conceito": "marcenaria: a chapa de MDF fatiada no corte guilhotinado"
+}
