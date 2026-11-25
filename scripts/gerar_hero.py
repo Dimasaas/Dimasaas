@@ -103,12 +103,12 @@ def boot():
 <text class="g1" x="60" y="292" font-size="40" font-weight="700" fill="#00E5FF">{nome}</text>
 <text x="60" y="292" font-size="40" font-weight="700" fill="url(#nomeg)">{nome}</text>
 </g>
-<text class="fade" x="62" y="330" font-size="21" fill="#c9bdf5" style="animation-delay:5.7s">CTO · Diretor de T.I. · Goiânia</text>
+<text class="fade" x="62" y="330" font-size="21" fill="#c9bdf5" style="animation-delay:5.7s">C.T.O · Goiânia</text>
 <text class="fade" x="60" y="372" font-size="21" style="animation-delay:6.2s"><tspan fill="#00E5FF">&gt;</tspan></text>
 <rect class="cur" x="84" y="356" width="12" height="20" fill="#00E5FF"/>'''
     )
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400" role="img" aria-label="Tela de boot do DIAMANTINO.OS: João Victor Diamantino, CTO · Diretor de T.I. · Goiânia">
-<title>DIAMANTINO.OS — João Victor Diamantino · CTO · Diretor de T.I. · Goiânia</title>
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400" role="img" aria-label="Tela de boot do DIAMANTINO.OS: João Victor Diamantino, C.T.O · Goiânia">
+<title>DIAMANTINO.OS — João Victor Diamantino · C.T.O · Goiânia</title>
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d0624"/><stop offset=".55" stop-color="#0a0a2e"/><stop offset="1" stop-color="#08143a"/></linearGradient>
 <linearGradient id="borda" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7C4DFF"/><stop offset="1" stop-color="#2979FF"/></linearGradient>

@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://dimasaas.github.io/Dimasaas/"><img src="assets/boot.svg" alt="DIAMANTINO.OS: João Victor Diamantino, CTO · Diretor de T.I., Goiânia" width="100%"></a>
+<a href="https://dimasaas.github.io/Dimasaas/"><img src="assets/boot.svg" alt="DIAMANTINO.OS: João Victor Diamantino, C.T.O, Goiânia" width="100%"></a>
 
 <br>
 
@@ -11,7 +11,7 @@
 
 <br><br>
 
-**CTO (Diretor de T.I.) na 1001 Negócios Imobiliários** · Estudante de Análise e Desenvolvimento de Sistemas na PUC Goiás · Goiânia, GO
+**C.T.O na 1001 Negócios Imobiliários** · Estudante de Análise e Desenvolvimento de Sistemas na PUC Goiás · Goiânia, GO
 
 Eu construo o software que roda a operação de uma imobiliária de loteamentos, e escrevo o código que fica em volta dele.
 
