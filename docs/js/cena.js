@@ -22,7 +22,7 @@ const BASE = {
   nucleo: { pos: new V3(0, 2.1, 11.8), alvo: new V3(0, 1.3, 0), meia: 5.3, foco: new V3(0, NUCLEO_Y, 0) },
   stack: { pos: new V3(-6.2, 8.4, 9.4), alvo: new V3(0, 0.9, 0), meia: 5.6, foco: new V3(0, NUCLEO_Y, 0) },
   projetos: { pos: new V3(0, -7.2, 12.7), alvo: new V3(0, -8.05, 0), meia: 1.75, foco: new V3(0, VITRINE_Y, 7) },
-  og: { pos: new V3(0, 2.75, 12.6), alvo: new V3(0, 0.15, 0), meia: 5.0, foco: new V3(0, NUCLEO_Y, 0) },
+  og: { pos: new V3(0, -0.4, 15), alvo: new V3(0, -0.2, 0), meia: 5.0, foco: new V3(0, NUCLEO_Y, 0) },
   explorar: { pos: new V3(13, 3.4, 21.5), alvo: new V3(0, -2.4, 0), meia: 9.5, foco: new V3(0, -2.4, 0) },
 };
 
@@ -40,7 +40,8 @@ export async function criarCena(canvas, { og = false, progresso = () => {}, even
     powerPreference: 'high-performance', preserveDrawingBuffer: og,
   });
   renderer.setClearColor(0x0a0418, 1);
-  const pixelMax = og ? 1 : Math.min(window.devicePixelRatio || 1, toque ? 1.5 : 1.75);
+  // teto de 1.5: num Intel UHD, 1920x1080 a 1x custa ~10 ms por quadro; a 1.5 ainda fica acima de 60 fps
+  const pixelMax = og ? 1 : Math.min(window.devicePixelRatio || 1, 1.5);
   let pixel = pixelMax;
   const tamanho = () => (og ? [1200, 627] : [window.innerWidth, window.innerHeight]);
   let [largura, altura] = tamanho();
@@ -396,14 +397,20 @@ export async function criarCena(canvas, { og = false, progresso = () => {}, even
     somaDt = 0; quadros = 0; avaliacoes++;
     eventos.onFps?.(fps);
     if (og || avaliacoes < 2) return;
-    if (fps < 47 && pixel > 0.75) {
-      pixel = Math.max(0.75, pixel - 0.25);
-      redimensionar();
-    }
+    // baixa a resolução interna em degraus; abaixo de 1x só em último caso
+    // (modo economia de bateria trava o navegador em 30 fps e não deve borrar a cena)
+    if (fps < 52 && pixel > 1) { pixel = Math.max(1, pixel - 0.25); redimensionar(); }
+    else if (fps < 26 && pixel > 0.75) { pixel = 0.75; redimensionar(); }
   }
 
   // ---------- laço ----------
-  let t = og ? 15.5 : 0, ultimo = performance.now(), rodando = true;
+  // na capa o instante é fixo (dá para escolher outro com ?og=1&t=NN) e o grão é mínimo, para o PNG ficar leve
+  let t = og ? (Number(new URLSearchParams(location.search).get('t')) || 15.5) : 0, ultimo = performance.now(), rodando = true;
+  if (og) {
+    pos.final.uniforms.uGrao.value = 0.012;
+    pos.final.uniforms.uLinhas.value = 0;
+    nucleo.diamante.rotation.x = 0.5; // a câmera da capa vê o diamante de baixo: inclina a mesa para ela
+  }
   const paralaxe = new V3(), paralaxeAlvo = new V3();
   const direita = new V3(), cima = new V3();
 

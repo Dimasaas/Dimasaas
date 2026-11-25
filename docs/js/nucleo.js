@@ -3,6 +3,7 @@
 // clique; em volta, um disco de partículas que foge do ponteiro.
 import * as THREE from 'three';
 import { RUIDO, HASH, EQUIRET } from './glsl.js';
+import { SOL_DIR } from './ceu.js';
 
 const V3 = THREE.Vector3;
 
@@ -88,6 +89,7 @@ export function criarNucleo(paleta, envTex, { particulas = 7000, detalhe = 13 } 
     uBrilho: { value: paleta.chuvaCabeca },
     uLuz1: { value: new V3(0.4, 0.8, 0.45).normalize() }, uLuz2: { value: new V3(-0.6, 0.5, 0.6).normalize() },
     uDisp: { value: 0.06 }, uIntens: { value: 1 }, uFlash: { value: 0 }, uHover: { value: 0 },
+    uSol: { value: paleta.sol0 }, uSolDir: { value: SOL_DIR },
   };
   const diamante = new THREE.Mesh(geometriaDiamante(), new THREE.ShaderMaterial({
     uniforms: uGema,
@@ -100,7 +102,7 @@ export function criarNucleo(paleta, envTex, { particulas = 7000, detalhe = 13 } 
         gl_Position = projectionMatrix * viewMatrix * w;
       }`,
     fragmentShader: /* glsl */ `
-      uniform sampler2D tEnv; uniform mat3 uEnvRot; uniform vec3 uBaixo, uMeio, uAlto, uBrilho, uLuz1, uLuz2;
+      uniform sampler2D tEnv; uniform mat3 uEnvRot; uniform vec3 uBaixo, uMeio, uAlto, uBrilho, uLuz1, uLuz2, uSol, uSolDir;
       uniform float uDisp, uIntens, uFlash, uHover;
       varying vec3 vN, vW, vNo;
       ${EQUIRET}
@@ -113,6 +115,8 @@ export function criarNucleo(paleta, envTex, { particulas = 7000, detalhe = 13 } 
         float k = fract(d.y * 0.5 + 0.5 + desloc);
         vec3 pal = k < 0.5 ? mix(uBaixo, uMeio, k * 2.0) : mix(uMeio, uAlto, (k - 0.5) * 2.0);
         vec3 c = pal * (0.04 + pow(L, 1.3) * 1.6);
+        c += pal * 0.22 * smoothstep(0.05, 0.9, d.y);                      // o céu da cena
+        c += uSol * pow(max(dot(d, uSolDir), 0.0), 60.0) * 0.8;             // o sol atravessando a pedra
         return mix(c, uBrilho * L * 0.9, smoothstep(2.2, 3.8, L) * 0.4);
       }
       void main(){
