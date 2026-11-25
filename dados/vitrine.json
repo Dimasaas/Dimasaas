@@ -1,0 +1,106 @@
+{
+  "licenca_novos": "PolyForm Noncommercial 1.0.0",
+  "repos": [
+    {
+      "repo": "plotline",
+      "lang": "Ruby",
+      "stack": [
+        "GeoJSON",
+        "SVG",
+        "ArcGIS"
+      ],
+      "licenca": "PolyForm NC",
+      "desc": "GeoJSON de lotes → planta em SVG (projeção, rotação, escala), com download do ArcGIS aberto de Goiânia.",
+      "nome": "Plotline"
+    },
+    {
+      "repo": "gatehouse",
+      "lang": "Node",
+      "stack": [
+        "MCP",
+        "Auditoria"
+      ],
+      "licenca": "PolyForm NC",
+      "desc": "Gateway MCP de leitura com escopo por pessoa, escrita em 2 etapas e auditoria.",
+      "nome": "Gatehouse"
+    },
+    {
+      "repo": "breather",
+      "lang": "Ruby",
+      "stack": [
+        "HTTP 503",
+        "Cooperativo"
+      ],
+      "licenca": "PolyForm NC",
+      "desc": "Freio global cooperativo para APIs que engasgam em 503.",
+      "nome": "Breather"
+    },
+    {
+      "repo": "shopkeep",
+      "lang": "TypeScript",
+      "stack": [
+        "Discord",
+        "Tickets"
+      ],
+      "licenca": "PolyForm NC",
+      "desc": "Bot de loja no Discord com tickets, pagamento plugável e setup idempotente.",
+      "nome": "Shopkeep"
+    },
+    {
+      "repo": "penny",
+      "lang": "Ruby",
+      "stack": [
+        "ITF",
+        "SVG"
+      ],
+      "licenca": "PolyForm NC",
+      "desc": "Dinheiro em centavos inteiros, rateio por maiores restos e boleto ITF em SVG.",
+      "nome": "Penny"
+    },
+    {
+      "repo": "breeze",
+      "lang": "Python",
+      "stack": [
+        "Linux",
+        "systemd"
+      ],
+      "licenca": "PolyForm NC",
+      "desc": "Daemon de ventoinha para MacBook com Linux, o servidor do escritório.",
+      "nome": "Breeze"
+    },
+    {
+      "repo": "RendeChapa",
+      "lang": "TypeScript",
+      "stack": [
+        "Node.js",
+        "PostgreSQL"
+      ],
+      "desc": "Plano de corte de chapas para marcenaria (otimizador guilhotinado)."
+    },
+    {
+      "repo": "dias-uteis-br",
+      "lang": "Ruby",
+      "stack": [
+        "JavaScript"
+      ],
+      "desc": "Dias úteis e feriados no Brasil, Ruby com espelho em JS."
+    },
+    {
+      "repo": "DiscordNodeStereo",
+      "lang": "C#",
+      "stack": [
+        "Discord"
+      ],
+      "desc": "Microfone estéreo a 512 kbps no Discord."
+    },
+    {
+      "repo": "pi-3b-gerenciador-de-tarefas",
+      "lang": "HTML/JS",
+      "stack": [
+        "Kanban",
+        "Calendário"
+      ],
+      "desc": "Kanban e calendário, Projeto Integrador da PUC Goiás."
+    }
+  ]
+}

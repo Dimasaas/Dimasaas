@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>João Victor Diamantino · C.T.O</title>
+  <meta name="description" content="DIAMANTINO.OS: o perfil do João Victor Diamantino, C.T.O, em 3D. Projetos de código aberto e as 31 tecnologias do dia a dia, numa cena synthwave para mexer.">
+  <meta name="theme-color" content="#120726">
+  <meta name="color-scheme" content="dark">
+  <link rel="canonical" href="https://dimasaas.github.io/Dimasaas/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="DIAMANTINO.OS">
+  <meta property="og:title" content="João Victor Diamantino · C.T.O">
+  <meta property="og:description" content="Projetos, as 31 tecnologias do dia a dia e o perfil em 3D.">
+  <meta property="og:url" content="https://dimasaas.github.io/Dimasaas/">
+  <meta property="og:image" content="https://dimasaas.github.io/Dimasaas/og.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="627">
+  <meta property="og:image:alt" content="João Victor Diamantino, C.T.O: um diamante em wireframe na frente de um sol synthwave, com grade neon e chuva de caracteres.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="João Victor Diamantino · C.T.O">
+  <meta name="twitter:description" content="Projetos, as 31 tecnologias do dia a dia e o perfil em 3D.">
+  <meta name="twitter:image" content="https://dimasaas.github.io/Dimasaas/og.png">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preload" href="assets/fontes/SpaceGrotesk-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fontes/JetBrainsMono-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="estilo.css">
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/gh/mrdoob/three.js@r182/build/three.module.min.js",
+      "three/addons/": "https://cdn.jsdelivr.net/gh/mrdoob/three.js@r182/examples/jsm/"
+    }
+  }
+  </script>
+  <script>
+    // decide o modo antes de pintar: sem WebGL2 ou com movimento reduzido, a página abre leve
+    (function () {
+      var q = new URLSearchParams(location.search), h = document.documentElement;
+      var gl = false;
+      try { gl = !!document.createElement('canvas').getContext('webgl2'); } catch (e) {}
+      var reduz = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (q.has('og')) h.classList.add('og');
+      else if (q.has('leve') || !gl || (reduz && !q.has('3d'))) {
+        h.classList.add('modo-leve');
+        h.dataset.motivo = !gl ? 'webgl' : (q.has('leve') ? 'pedido' : 'movimento');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <canvas id="palco" aria-hidden="true"></canvas>
+
+  <div id="boot" aria-hidden="true">
+    <div class="boot-caixa">
+      <pre id="boot-texto"></pre>
+      <div class="boot-barra"><span id="boot-progresso"></span></div>
+      <p class="boot-dica">clique ou tecle para pular</p>
+    </div>
+  </div>
+
+  <div class="hud" id="hud">
+    <header class="hud-topo">
+      <button class="logo" id="logo" type="button" aria-label="DIAMANTINO.OS, voltar ao núcleo">
+        <svg class="logo-gema" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10l5 6-10 12L2 9z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M2 9h20M9 3l3 6 3-6M12 9v12" fill="none" stroke="currentColor" stroke-width="1" opacity=".7"/></svg>
+        <span>DIAMANTINO<b>.OS</b></span>
+      </button>
+      <nav class="dock" aria-label="Navegação da cena">
+        <button type="button" data-estacao="nucleo" aria-pressed="true"><span class="ic" aria-hidden="true">◆</span><span>núcleo</span><kbd>1</kbd></button>
+        <button type="button" data-estacao="stack" aria-pressed="false"><span class="ic" aria-hidden="true">◎</span><span>stack</span><kbd>2</kbd></button>
+        <button type="button" data-estacao="projetos" aria-pressed="false"><span class="ic" aria-hidden="true">▤</span><span>projetos</span><kbd>3</kbd></button>
+        <button type="button" data-acao="explorar" aria-pressed="false"><span class="ic" aria-hidden="true">✥</span><span>explorar</span><kbd>4</kbd></button>
+        <button type="button" data-acao="terminal"><span class="ic" aria-hidden="true">›_</span><span>terminal</span><kbd>5</kbd></button>
+      </nav>
+    </header>
+
+    <section class="hero" id="hero" aria-label="Apresentação">
+      <p class="hero-prompt"><span class="cursor-prompt">&gt;</span> whoami</p>
+      <h1 class="glitch" data-texto="João Victor Diamantino">João Victor Diamantino</h1>
+      <p class="hero-cargo"><span class="cto">C.T.O</span><span class="hero-onde">1001 Negócios Imobiliários · Goiânia, GO</span></p>
+      <button class="hero-tec" type="button" data-estacao="stack"><b>31</b> tecnologias no dia a dia <span aria-hidden="true">→</span></button>
+      <div class="hero-links">
+        <a class="botao botao-cheio" href="https://github.com/Dimasaas" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0.5a11.5 11.5 0 0 0 -3.64 22.41c0.58 0.1 0.79 -0.25 0.79 -0.56v-2c-3.2 0.7 -3.88 -1.37 -3.88 -1.37 -0.53 -1.33 -1.28 -1.69 -1.28 -1.69 -1.05 -0.72 0.08 -0.7 0.08 -0.7 1.16 0.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36 0.96 0.1 -0.75 0.4 -1.26 0.73 -1.55 -2.55 -0.29 -5.24 -1.28 -5.24 -5.69 0 -1.26 0.45 -2.29 1.19 -3.09 -0.12 -0.29 -0.52 -1.46 0.11 -3.05 0 0 0.97 -0.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2 -1.49 3.17 -1.18 3.17 -1.18 0.63 1.59 0.23 2.76 0.11 3.05 0.74 0.8 1.19 1.83 1.19 3.09 0 4.42 -2.69 5.39 -5.26 5.68 0.41 0.36 0.78 1.06 0.78 2.14v3.17c0 0.31 0.21 0.67 0.8 0.56A11.5 11.5 0 0 0 12 0.5z"/></svg>
+          GitHub
+        </a>
+        <a class="botao" href="https://www.linkedin.com/in/diamantinojv/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0 -1.33 -0.02 -3.04 -1.85 -3.04 -1.85 0 -2.14 1.45 -2.14 2.94v5.67H9.34V9h3.42v1.56h0.05c0.48 -0.9 1.64 -1.85 3.37 -1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0 -4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C0.79 0 0 0.77 0 1.73v20.54C0 23.23 0.79 24 1.77 24h20.45c0.98 0 1.78 -0.77 1.78 -1.73V1.73C24 0.77 23.2 0 22.22 0z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+      <p class="hero-dica" id="hero-dica">arraste para girar o diamante · clique nos cristais · tem segredos aqui</p>
+    </section>
+
+    <aside class="cartao-estacao" id="cartao-stack" aria-label="Legenda da órbita" hidden>
+      <h2>Órbita <small>31 tecnologias · 3 anéis</small></h2>
+      <ul class="legenda" id="legenda"></ul>
+      <p class="cartao-dica">passe o mouse num grupo para acender; clique num cristal para focar</p>
+    </aside>
+
+    <aside class="cartao-estacao" id="cartao-projetos" aria-label="Projeto em destaque" hidden>
+      <h2>Vitrine <small>9 projetos de código aberto</small></h2>
+      <div class="proj-atual">
+        <button type="button" class="seta" id="proj-ant" aria-label="Projeto anterior">‹</button>
+        <div class="proj-info" aria-live="polite">
+          <strong id="proj-nome">Breather</strong>
+          <span id="proj-desc"></span>
+        </div>
+        <button type="button" class="seta" id="proj-prox" aria-label="Próximo projeto">›</button>
+      </div>
+      <a class="botao botao-cheio" id="proj-abrir" href="https://github.com/Dimasaas/breather" target="_blank" rel="noopener">abrir repositório ↗</a>
+      <p class="cartao-dica">arraste o carrossel · clique no painel da frente para abrir</p>
+    </aside>
+
+    <aside class="cartao-estacao" id="cartao-explorar" aria-label="Modo explorar" hidden>
+      <h2>Explorar <small>câmera livre</small></h2>
+      <p class="cartao-dica">arraste para orbitar · role ou pince para zoom · botão direito ou dois dedos para mover</p>
+      <button type="button" class="botao" id="sair-explorar">sair (esc)</button>
+    </aside>
+
+    <footer class="status" id="status">
+      <span id="st-fps">-- fps</span>
+      <span aria-hidden="true">·</span>
+      <span id="st-tema">SYNTHWAVE</span>
+      <span aria-hidden="true">·</span>
+      <span class="st-dica" id="st-dica">digite <kbd>sudo</kbd></span>
+      <a class="st-creditos" href="https://github.com/Dimasaas/Dimasaas/blob/main/docs/CREDITOS.md" target="_blank" rel="noopener">créditos</a>
+    </footer>
+  </div>
+
+  <div id="rotulos" aria-hidden="true"></div>
+  <div id="dica-flutuante" role="tooltip"></div>
+  <div id="aviso" role="status" aria-live="polite"></div>
+
+  <div id="terminal" class="terminal" aria-hidden="true" role="dialog" aria-label="Terminal do DIAMANTINO.OS">
+    <div class="term-janela">
+      <div class="term-barra">
+        <span class="term-bolas" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="term-titulo">visitante@diamantino: ~</span>
+        <button type="button" class="term-fechar" aria-label="Fechar terminal">×</button>
+      </div>
+      <div class="term-saida"></div>
+      <form class="term-linha" autocomplete="off">
+        <label for="term-entrada"><span class="t-prompt">visitante@diamantino</span><span class="t-dim">:~$</span></label>
+        <input id="term-entrada" class="term-entrada" type="text" spellcheck="false" autocapitalize="off" autocorrect="off" enterkeyhint="send">
+      </form>
+    </div>
+  </div>
+
+  <div id="og-titulo" aria-hidden="true">
+    <p class="og-nome">João Victor Diamantino</p>
+    <p class="og-cto">C.T.O</p>
+    <p class="og-linha">31 tecnologias · projetos · versão 3D</p>
+  </div>
+
+  <!-- Conteúdo em texto: lido por leitores de tela e mostrado no modo leve (sem WebGL ou com movimento reduzido). -->
+  <main id="leve" class="leve">
+    <header class="leve-topo">
+      <p class="leve-marca">DIAMANTINO<b>.OS</b></p>
+      <h1>João Victor Diamantino</h1>
+      <p class="leve-cargo"><span class="cto">C.T.O</span> 1001 Negócios Imobiliários · Goiânia, GO</p>
+      <p>Eu construo o software que roda a operação de uma imobiliária de loteamentos, e escrevo o código que fica em volta dele.</p>
+      <p class="leve-links">
+        <a class="botao botao-cheio" href="https://github.com/Dimasaas" target="_blank" rel="noopener">GitHub</a>
+        <a class="botao" href="https://www.linkedin.com/in/diamantinojv/" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+      <p class="leve-aviso" id="leve-aviso"></p>
+    </header>
+
+    <section aria-labelledby="t-tec">
+      <h2 id="t-tec">31 tecnologias no dia a dia</h2>
+      <p class="leve-sub">O que roda em produção ou no fluxo de trabalho toda semana. Biblioteca não conta.</p>
+      <div class="leve-grupos">
+        <div><h3>Linguagens e frameworks</h3><p>Ruby · Ruby on Rails 8 · Hotwire · JavaScript · Node.js · Python · Bash</p></div>
+        <div><h3>Dados</h3><p>PostgreSQL 17 · SQLite</p></div>
+        <div><h3>Infra e DevOps</h3><p>Linux (Ubuntu) · Docker · Docker Compose · Caddy · Cloudflare · systemd · Uptime Kuma · rclone · Git/GitHub</p></div>
+        <div><h3>Gestão de TI</h3><p>MeshCentral · AdGuard Home</p></div>
+        <div><h3>Integrações</h3><p>ERP Senior (ProUAU) · WhatsApp Business Platform · APIs do Sicoob (mTLS + OAuth2) · Clicksign · Google Workspace · NFS-e</p></div>
+        <div><h3>IA e mídia</h3><p>LLM (API) · RAG · faster-whisper · FFmpeg</p></div>
+        <div><h3>Mobile</h3><p>Android (Google Play)</p></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="t-proj">
+      <h2 id="t-proj">Vitrine</h2>
+      <p class="leve-sub">Código aberto que eu escrevi e mantenho.</p>
+      <ul class="leve-projetos">
+        <li><a href="https://github.com/Dimasaas/breather" target="_blank" rel="noopener"><strong>Breather</strong><span>Freio global cooperativo para APIs que devolvem 503.</span></a></li>
+        <li><a href="https://github.com/Dimasaas/penny" target="_blank" rel="noopener"><strong>Penny</strong><span>Dinheiro em centavos inteiros e boleto ITF em SVG.</span></a></li>
+        <li><a href="https://github.com/Dimasaas/plotline" target="_blank" rel="noopener"><strong>Plotline</strong><span>GeoJSON de lotes vira planta em SVG, com projeção, rotação e escala.</span></a></li>
+        <li><a href="https://github.com/Dimasaas/gatehouse" target="_blank" rel="noopener"><strong>Gatehouse</strong><span>Gateway MCP de leitura com escopo por pessoa e auditoria.</span></a></li>
+        <li><a href="https://github.com/Dimasaas/breeze" target="_blank" rel="noopener"><strong>Breeze</strong><span>Ventoinha inteligente do MacBook que virou servidor.</span></a></li>
+        <li><a href="https://github.com/Dimasaas/shopkeep" target="_blank" rel="noopener"><strong>Shopkeep</strong><span>Bot de loja no Discord, com tickets e pagamento plugável.</span></a></li>
+        <li><a href="https://github.com/Dimasaas/RendeChapa" target="_blank" rel="noopener"><strong>RendeChapa</strong><span>Plano de corte de chapas para marcenaria, com otimizador guilhotinado.</span></a></li>
+        <li><a href="https://github.com/Dimasaas/dias-uteis-br" target="_blank" rel="noopener"><strong>dias-uteis-br</strong><span>Dias úteis e feriados do Brasil, em Ruby com espelho em JS.</span></a></li>
+        <li><a href="https://github.com/Dimasaas/DiscordNodeStereo" target="_blank" rel="noopener"><strong>DiscordNodeStereo</strong><span>Microfone estéreo a 512 kbps no Discord.</span></a></li>
+      </ul>
+    </section>
+
+    <footer class="leve-rodape">
+      <p><a href="https://github.com/Dimasaas/Dimasaas/blob/main/docs/CREDITOS.md" target="_blank" rel="noopener">créditos dos assets</a></p>
+    </footer>
+  </main>
+
+  <noscript><style>#boot, .hud { display: none !important; } .leve { position: static !important; clip: auto !important; clip-path: none !important; width: auto !important; height: auto !important; overflow: visible !important; white-space: normal !important; }</style></noscript>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

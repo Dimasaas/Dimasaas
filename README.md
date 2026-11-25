@@ -1,65 +1,124 @@
-# João Victor Diamantino Cardoso
+<div align="center">
 
-**Auxiliar Administrativo** na CV ADM, desenvolvendo os sistemas internos da [1001 Negócios Imobiliários](https://1001imoveis.com) · Estudante de **Análise e Desenvolvimento de Sistemas** na PUC Goiás · Goiânia, GO — Brasil
+<a href="https://dimasaas.github.io/Dimasaas/"><img src="assets/boot.svg" alt="DIAMANTINO.OS: João Victor Diamantino, C.T.O, Goiânia" width="100%"></a>
 
-Construo o software que roda a operação de uma imobiliária de loteamentos: cobrança, integração com o ERP, atendimento por WhatsApp, financeiro e documentos. Trabalho perto do problema real: o sistema é usado todo dia por quem cobra, atende e assina.
+<br>
 
-## O que estou construindo
+<a href="https://www.linkedin.com/in/diamantinojv/"><img src="https://img.shields.io/badge/LinkedIn-diamantinojv-4D8BFF?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+<a href="https://1001imoveis.com"><img src="https://img.shields.io/badge/SITE-1001imoveis.com-7C5CFF?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Site"></a>
+<img src="https://komarev.com/ghpvc/?username=Dimasaas&style=for-the-badge&color=FF4FA3&label=VISITAS" alt="Visitas">
+<a href="https://dimasaas.github.io/Dimasaas/"><img src="https://img.shields.io/badge/%E2%96%B6-VERS%C3%83O%203D-FF4FA3?style=for-the-badge" alt="Versão 3D"></a>
 
-### Na 1001 / CV ADM
+<br><br>
 
-**INAD** *(privado)*: painel de cobrança de inadimplência imobiliária, alimentado pela API do ERP ProUAU. Sincroniza a carteira, monta a mensagem de cobrança sob a régua do CDC, atende o cliente pelo WhatsApp Cloud API, gera carnê e remessa bancária, desenha o mapa do loteamento e mede a recuperação por venda.
-`Rails 8` · `PostgreSQL` · `Minitest` · front em HTML/CSS/JS **sem build** · deploy por Docker Compose
+**C.T.O na 1001 Negócios Imobiliários** · Goiânia, GO
 
-> Começou em julho de 2026 como um leitor de relatórios de inadimplência em PDF que virava banco SQL. Passou por Python + SQLite, trocou o PDF pela API do ERP e chegou ao Rails.
+Eu construo o software que roda a operação de uma imobiliária de loteamentos, e escrevo o código que fica em volta dele.
 
-**Financeiro** *(privado)*: o livro de dinheiro da casa, com partidas dobradas, multiempresa e valores em centavos inteiros.
-`Rails 8` · `PostgreSQL`
+<img src="assets/painel.svg" alt="31 tecnologias, 3.600+ commits no último ano, 3 sistemas em produção e 1 app na Google Play, 15 repositórios públicos" width="100%">
 
-**casa-1001** *(privado)*: o monorepo da empresa. Reúne os sistemas, o proxy de borda (Caddy), o design system **1001 Órbita** e um plugin com conector MCP que dá aos colaboradores leitura da produção pelo Claude.
-`Ruby` · `Node.js` · `Caddy` · `MCP`
+</div>
 
-**SoftEvo** *(privado)*: projeto e instalador para levar o INAD a outras incorporadoras.
+## 🪐 A órbita
 
-**trena** *(privado)*: consultas prontas e seguras para o ERP UAU, pela API oficial e só de leitura.
-`Python`
+As tecnologias que eu uso toda semana, em produção ou no fluxo de trabalho. Biblioteca que eu só "já usei uma vez" não entra.
 
-### Público
+<div align="center">
+<img src="assets/orbita.svg" alt="Órbita com as 31 tecnologias em 3 anéis e 7 grupos" width="100%">
+</div>
 
-| Projeto | O que é | Stack |
-|---|---|---|
-| **[gerenciador-tarefas-cv-adm](https://github.com/Dimasaas/gerenciador-tarefas-cv-adm)** | Sistema web de gestão de tarefas com Kanban e calendário, feito como Projeto Integrador (PUC Goiás) para a CV ADM · [**abrir**](https://dimasaas.github.io/gerenciador-tarefas-cv-adm/) | `HTML` `CSS` `JavaScript` |
-| **[dias-uteis-br](https://github.com/Dimasaas/dias-uteis-br)** | Dias úteis, feriados nacionais e horário de funcionamento no Brasil. É Ruby sem Rails, com um espelho em JavaScript que um teste obriga a concordar com o Ruby | `Ruby` `JavaScript` |
-| **[RendeChapa](https://github.com/Dimasaas/RendeChapa)** | Plano técnico de corte de chapas para marcenaria: otimizador de cortes guilhotinados com compensação da serra, painel do cliente e pagamento via Mercado Pago | `Node.js` `TypeScript` `PostgreSQL` |
-| **[DiscordNodeStereo](https://github.com/Dimasaas/DiscordNodeStereo)** | Mantém o microfone estéreo a 512 kbps no Discord (PTB e Canary) depois de cada atualização. É portátil, um `.exe` só | `C#` |
+## 🖥️ Sistemas que eu construo (mockups com dados fictícios)
 
-## Como eu trabalho
+<table>
+<tr>
+<td width="50%"><img src="assets/mockups/painel-financeiro.svg" alt="Painel de um razão contábil: saldos, gráfico do mês e últimos lançamentos"></td>
+<td width="50%"><img src="assets/mockups/painel-operacao.svg" alt="Painel de operação: containers no ar, CPU, RAM, temperatura e backups do dia"></td>
+</tr>
+</table>
 
-- **Medir antes de afirmar.** Número que o código pode mudar não vai escrito na documentação; a documentação manda conferir.
-- **Documentação que mente é pior que documentação nenhuma.** Cada regra carrega o porquê e a data em que foi decidida.
-- **Dinheiro em centavos inteiros**, nunca em float.
-- **O ERP é produção real de outra empresa.** Ler é livre; escrever pede confirmação, sempre.
-- **Front sem build quando dá.** Menos peças para quebrar às 3 da manhã.
+<div align="center">
+<img src="assets/mockups/app-cliente.svg" alt="App Android de área do cliente com parcelas e 2ª via" width="50%">
+</div>
 
-## Stack
+<sub>Ilustrações feitas do zero; os dados são fictícios.</sub>
 
-![Ruby](https://img.shields.io/badge/Ruby-CC342D?style=flat-square&logo=ruby&logoColor=white)
-![Rails](https://img.shields.io/badge/Rails%208-D30001?style=flat-square&logo=rubyonrails&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-512BD4?style=flat-square&logo=dotnet&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Caddy](https://img.shields.io/badge/Caddy-1F88C0?style=flat-square&logo=caddy&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
+## 🚀 Vitrine
 
-## Formação
+Projetos que eu escrevi e mantenho. Clique no cartão para abrir o repositório.
 
-**Análise e Desenvolvimento de Sistemas** — Pontifícia Universidade Católica de Goiás (PUC Goiás), CEAD
+<table>
+<tr>
+<td width="50%"><a href="https://github.com/Dimasaas/plotline"><img src="assets/cards/plotline.svg" alt="Plotline: GeoJSON de lotes → planta em SVG (projeção, rotação, escala), com download do ArcGIS aberto de Goiânia."></a></td>
+<td width="50%"><a href="https://github.com/Dimasaas/gatehouse"><img src="assets/cards/gatehouse.svg" alt="Gatehouse: Gateway MCP de leitura com escopo por pessoa, escrita em 2 etapas e auditoria."></a></td>
+</tr>
+<tr>
+<td width="50%"><a href="https://github.com/Dimasaas/breather"><img src="assets/cards/breather.svg" alt="Breather: Freio global cooperativo para APIs que engasgam em 503."></a></td>
+<td width="50%"><a href="https://github.com/Dimasaas/shopkeep"><img src="assets/cards/shopkeep.svg" alt="Shopkeep: Bot de loja no Discord com tickets, pagamento plugável e setup idempotente."></a></td>
+</tr>
+<tr>
+<td width="50%"><a href="https://github.com/Dimasaas/penny"><img src="assets/cards/penny.svg" alt="Penny: Dinheiro em centavos inteiros, rateio por maiores restos e boleto ITF em SVG."></a></td>
+<td width="50%"><a href="https://github.com/Dimasaas/breeze"><img src="assets/cards/breeze.svg" alt="Breeze: Daemon de ventoinha para MacBook com Linux, o servidor do escritório."></a></td>
+</tr>
+<tr>
+<td width="50%"><a href="https://github.com/Dimasaas/RendeChapa"><img src="assets/cards/RendeChapa.svg" alt="RendeChapa: Plano de corte de chapas para marcenaria (otimizador guilhotinado)."></a></td>
+<td width="50%"><a href="https://github.com/Dimasaas/dias-uteis-br"><img src="assets/cards/dias-uteis-br.svg" alt="dias-uteis-br: Dias úteis e feriados no Brasil, Ruby com espelho em JS."></a></td>
+</tr>
+<tr>
+<td width="50%"><a href="https://github.com/Dimasaas/DiscordNodeStereo"><img src="assets/cards/DiscordNodeStereo.svg" alt="DiscordNodeStereo: Microfone estéreo a 512 kbps no Discord."></a></td>
+<td width="50%"><a href="https://github.com/Dimasaas/pi-3b-gerenciador-de-tarefas"><img src="assets/cards/pi-3b-gerenciador-de-tarefas.svg" alt="pi-3b-gerenciador-de-tarefas: Kanban e calendário, Projeto Integrador da PUC Goiás."></a></td>
+</tr>
+</table>
 
----
+<sub>Os projetos Plotline, Gatehouse, Breather, Shopkeep, Penny e Breeze usam a licença **PolyForm Noncommercial 1.0.0**: dá para ler e estudar à vontade, mas não para comercializar.</sub>
 
-<sub>Para falar sobre cobrança imobiliária, integração com ERP ou WhatsApp Business API, use os canais no site da 1001: <a href="https://1001imoveis.com">1001imoveis.com</a></sub>
+## 🧭 Como eu trabalho
+
+```text
+01  a regra mora no código, com teste
+02  operação sensível tem trava própria
+03  dado sensível não sai da nossa infraestrutura
+```
+
+## 📡 Ao vivo
+
+<div align="center">
+
+<img src="profile-3d-contrib/profile-night-rainbow.svg" alt="Meus commits em 3D" width="100%">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Dimasaas/Dimasaas/output/cobra-escura.svg">
+  <img alt="A cobra comendo os commits" src="https://raw.githubusercontent.com/Dimasaas/Dimasaas/output/cobra.svg" width="100%">
+</picture>
+
+<img src="https://streak-stats.demolab.com?user=Dimasaas&background=120726&stroke=7C5CFF&ring=FF4FA3&fire=FFB86B&currStreakNum=F5EEFF&sideNums=F5EEFF&currStreakLabel=FF4FA3&sideLabels=C3A8E6&dates=C3A8E6&hide_border=true&locale=pt_BR" alt="Sequência de commits">
+
+</div>
+
+<details>
+<summary>🔒 não clique aqui</summary>
+
+```text
+$ sudo contratar --joao
+[sudo] senha para recrutador: ********
+
+   ╔══════════════════════════════════════════╗
+   ║   ACESSO CONCEDIDO.  Boa escolha.        ║
+   ╚══════════════════════════════════════════╝
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+   processo "contratar" iniciado em segundo plano...
+   o café já está na conta.
+   próximo passo: https://www.linkedin.com/in/diamantinojv/
+```
+
+👉 [**abrir o LinkedIn**](https://www.linkedin.com/in/diamantinojv/)
+
+</details>
+
+<br>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF4FA3,50:7C5CFF,100:4D8BFF&height=120&section=footer" alt="" width="100%">
