@@ -30,7 +30,7 @@ const suave = (k) => (k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2)
 
 function carregarHDR(url, aoProgresso) {
   return new Promise((ok, erro) => new HDRLoader().load(url, ok,
-    (e) => { if (e.lengthComputable) aoProgresso(e.loaded / e.total); }, erro));
+    (e) => { if (e.lengthComputable && e.total > 0) aoProgresso(Math.min(1, e.loaded / e.total)); }, erro));
 }
 
 export async function criarCena(canvas, { og = false, progresso = () => {}, eventos = {} } = {}) {

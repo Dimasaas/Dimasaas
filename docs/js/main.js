@@ -47,6 +47,7 @@ function criarBoot() {
 }
 
 function barraTexto(p) {
+  p = Math.min(1, Math.max(0, Number(p) || 0));
   const n = 14, c = Math.round(p * n);
   return `${'█'.repeat(c)}${'░'.repeat(n - c)} ${String(Math.round(p * 100)).padStart(3, ' ')}%`;
 }
