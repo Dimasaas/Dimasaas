@@ -83,7 +83,7 @@ Projetos que eu escrevi e mantenho. Clique no cartão para abrir o repositório.
 
 <div align="center">
 
-<img src="profile-3d-contrib/profile-night-rainbow.svg" alt="Meus commits em 3D" width="100%">
+<img src="https://raw.githubusercontent.com/Dimasaas/Dimasaas/output/relogio.svg" alt="RELÓGIO DO ANO: cada dia do último ano é um raio; o comprimento é a quantidade de contribuições" width="100%">
 
 <img src="https://raw.githubusercontent.com/Dimasaas/Dimasaas/output/jogo.svg" alt="LAPIDÁRIO.EXE: uma nave-diamante lapida os dias com commit do último ano" width="100%">
 

@@ -1,4 +1,4 @@
-name: Jogo
+name: Ao vivo
 
 on:
   schedule:
@@ -16,10 +16,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Gerar o LAPIDÁRIO.EXE
+      - name: Gerar o LAPIDÁRIO.EXE e o RELÓGIO DO ANO
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/gerar_jogo.py --usuario "${{ github.repository_owner }}" --saida dist/jogo.svg
+        run: |
+          python scripts/gerar_jogo.py --usuario "${{ github.repository_owner }}" --saida dist/jogo.svg
+          python scripts/gerar_relogio.py --usuario "${{ github.repository_owner }}" --saida dist/relogio.svg
       - uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
