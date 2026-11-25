@@ -1,0 +1,14 @@
+{
+  "criterio": "roda em produção ou no fluxo de trabalho da casa toda semana; biblioteca não conta",
+  "medido_em": "2026-11-25",
+  "total": 31,
+  "grupos": [
+    {"nome": "Linguagens e frameworks", "anel": 1, "itens": ["Ruby", "Ruby on Rails 8", "Hotwire", "JavaScript", "Node.js", "Python", "Bash"]},
+    {"nome": "Dados", "anel": 1, "itens": ["PostgreSQL 17", "SQLite"]},
+    {"nome": "Infra e DevOps", "anel": 2, "itens": ["Linux (Ubuntu)", "Docker", "Docker Compose", "Caddy", "Cloudflare", "systemd", "Uptime Kuma", "rclone", "Git/GitHub"]},
+    {"nome": "Gestão de TI", "anel": 2, "itens": ["MeshCentral", "AdGuard Home"]},
+    {"nome": "Integrações", "anel": 3, "itens": ["ERP Senior (ProUAU)", "WhatsApp Business Platform", "APIs do Sicoob (mTLS + OAuth2)", "Clicksign", "Google Workspace", "NFS-e"]},
+    {"nome": "IA e mídia", "anel": 3, "itens": ["LLM (API)", "RAG", "faster-whisper", "FFmpeg"]},
+    {"nome": "Mobile", "anel": 3, "itens": ["Android (Google Play)"]}
+  ]
+}
