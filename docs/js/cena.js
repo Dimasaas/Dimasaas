@@ -90,8 +90,10 @@ export async function criarCena(canvas, { og = false, progresso = () => {}, even
   const pos = criarPos(renderer, cena, camera, { ruidoTex: ruido, hdr, amostras: 0, escalaBloom: toque ? 0.4 : 0.5 });
   pos.ajustar(largura, altura, pixel);
 
-  // compila os shaders antes de mostrar (evita engasgo no primeiro quadro)
-  await renderer.compileAsync(cena, camera);
+  // compila os shaders antes de mostrar (evita engasgo no primeiro quadro); sem a extensão de
+  // compilação paralela (Safari, render por software) a versão síncrona evita o aviso no console
+  if (renderer.extensions.has('KHR_parallel_shader_compile')) await renderer.compileAsync(cena, camera);
+  else renderer.compile(cena, camera);
   progresso('shaders', 1);
 
   // ---------- câmera ----------
