@@ -11,7 +11,7 @@
 
 <br><br>
 
-**C.T.O na 1001 Negócios Imobiliários** · Estudante de Análise e Desenvolvimento de Sistemas na PUC Goiás · Goiânia, GO
+**C.T.O na 1001 Negócios Imobiliários** · Goiânia, GO
 
 Eu construo o software que roda a operação de uma imobiliária de loteamentos, e escrevo o código que fica em volta dele.
 
@@ -44,7 +44,7 @@ As tecnologias que eu uso toda semana, em produção ou no fluxo de trabalho. Bi
 
 ## 🚀 Vitrine
 
-Código aberto que eu escrevi e mantenho. Clique no cartão para abrir o repositório.
+Projetos que eu escrevi e mantenho. Clique no cartão para abrir o repositório.
 
 <table>
 <tr>
