@@ -1,0 +1,57 @@
+{
+  "nome": "Synthwave",
+  "escolhida_em": "2026-11-25",
+  "uso": "fonte única de cor do perfil, da página 3D e dos banners/demos dos repositórios",
+  "fundo": "#120726",
+  "fundo_profundo": "#0a0418",
+  "superficie": "#1e0d3d",
+  "roxo_profundo": "#2b0f52",
+  "magenta": "#FF4FA3",
+  "roxo": "#7C5CFF",
+  "azul": "#4D8BFF",
+  "ambar": "#FFB86B",
+  "texto": "#F5EEFF",
+  "texto_secundario": "#C3A8E6",
+  "borda": "rgba(255,79,163,0.28)",
+  "degrade_principal": [
+    "#FF4FA3",
+    "#7C5CFF",
+    "#4D8BFF"
+  ],
+  "degrade_por_do_sol": [
+    "#FFB86B",
+    "#FF4FA3",
+    "#7C5CFF"
+  ],
+  "regras": [
+    "fundo sempre escuro (#120726 ou #0a0418)",
+    "magenta é o destaque principal (títulos, nome, bordas ativas)",
+    "âmbar só em detalhe (sol, [ OK ], cursor, um chip), nunca em bloco grande",
+    "azul e roxo para gráficos, anéis, linhas e grade",
+    "texto em #F5EEFF; secundário em #C3A8E6 (contraste ≥ 4.5:1 sobre #120726)",
+    "elementos synthwave bem-vindos: sol listrado em degradê âmbar→magenta, grade em perspectiva roxa/azul no chão, brilho neon"
+  ],
+  "derivadas": {
+    "magenta_claro": "#FF9CC9",
+    "azul_claro": "#9DBBFF",
+    "status_ok": "#00E676"
+  },
+  "grupos": [
+    "magenta",
+    "azul",
+    "roxo",
+    "azul_claro",
+    "magenta_claro",
+    "ambar",
+    "texto"
+  ],
+  "linguagens": {
+    "lang_ruby": "#CC342D",
+    "lang_node": "#68A063",
+    "lang_typescript": "#3178C6",
+    "lang_python": "#3572A5",
+    "lang_csharp": "#9B4F96",
+    "lang_html": "#E34C26"
+  },
+  "nota": "copia de vitrine/_ferramentas/paleta-synthwave.json + derivadas usadas nos SVGs (tons claros, verde de status, cores de linguagem)"
+}

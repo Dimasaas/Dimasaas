@@ -2,13 +2,17 @@
 """Gera assets/cards/<repo>.svg (600x300) a partir de dados/vitrine.json."""
 import json
 import textwrap
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from paleta import GRUPOS, pintar  # noqa: E402
 
 RAIZ = Path(__file__).resolve().parent.parent
 V = json.loads((RAIZ / "dados" / "vitrine.json").read_text(encoding="utf-8"))
 FONTE = "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
-ACENTOS = [("#7C4DFF", "#00E5FF"), ("#2979FF", "#B388FF"), ("#B388FF", "#2979FF"), ("#00E5FF", "#7C4DFF")]
-LINGUA = {"Ruby": "#CC342D", "Node": "#68a063", "TypeScript": "#3178C6", "Python": "#3572A5", "C#": "#9B4F96", "HTML/JS": "#E34C26"}
+ACENTOS = [("@roxo@", "@magenta@"), ("@azul@", "@magenta_claro@"), ("@magenta_claro@", "@azul@"), ("@magenta@", "@roxo@")]
+LINGUA = {"Ruby": "@lang_ruby@", "Node": "@lang_node@", "TypeScript": "@lang_typescript@", "Python": "@lang_python@", "C#": "@lang_csharp@", "HTML/JS": "@lang_html@"}
 
 
 def esc(s):
@@ -21,7 +25,7 @@ def card(i, r):
     tam = min(38, int(500 / (len(nome) * 0.6)))
     linhas = textwrap.wrap(r["desc"], 46)[:4]
     desc = "".join(
-        f'<text x="32" y="{122 + k * 24}" font-size="16" fill="#cfc4f5">{esc(l)}</text>' for k, l in enumerate(linhas)
+        f'<text x="32" y="{122 + k * 24}" font-size="16" fill="@texto@">{esc(l)}</text>' for k, l in enumerate(linhas)
     )
     chips, x = [], 32
     todos = [r["lang"]] + r["stack"]
@@ -32,20 +36,20 @@ def card(i, r):
         if x + w > 568:
             break
         ultimo = r.get("licenca") and c == r["licenca"]
-        cor = "#00E5FF" if ultimo else a1
-        fundo = "#00E5FF" if ultimo else a1
+        cor = "@magenta@" if ultimo else a1
+        fundo = "@magenta@" if ultimo else a1
         chips.append(
             f'<g><rect x="{x}" y="244" width="{w}" height="26" rx="13" fill="{fundo}" fill-opacity=".16" stroke="{cor}" stroke-opacity=".7"/>'
-            f'<text x="{x + w / 2:.0f}" y="262" text-anchor="middle" font-size="13" fill="#efe9ff">{esc(c)}</text></g>'
+            f'<text x="{x + w / 2:.0f}" y="262" text-anchor="middle" font-size="13" fill="@texto@">{esc(c)}</text></g>'
         )
         x += w + 8
-    cl = LINGUA.get(r["lang"], "#B388FF")
+    cl = LINGUA.get(r["lang"], "@magenta_claro@")
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300" role="img" aria-label="{esc(nome)}: {esc(r["desc"])}">
 <title>{esc(nome)}</title>
 <defs>
-<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d0624"/><stop offset="1" stop-color="#08143a"/></linearGradient>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="@fundo_profundo@"/><stop offset="1" stop-color="@fundo@"/></linearGradient>
 <linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="{a1}"/><stop offset="1" stop-color="{a2}"/></linearGradient>
-<linearGradient id="t" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d9ccff"/></linearGradient>
+<linearGradient id="t" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="@texto@"/><stop offset="1" stop-color="@texto@"/></linearGradient>
 <pattern id="p" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="{a1}" stroke-opacity=".09"/></pattern>
 <clipPath id="c"><rect width="600" height="300" rx="18"/></clipPath>
 </defs>
@@ -62,7 +66,7 @@ svg{{font-family:{FONTE}}}
 <rect width="600" height="300" fill="url(#bg)"/>
 <rect width="600" height="300" fill="url(#p)"/>
 <rect class="s" width="260" height="300" fill="{a1}" opacity=".10"/>
-<text x="32" y="42" font-size="13" fill="#8f7fd1">github.com/Dimasaas/{esc(r["repo"])}</text>
+<text x="32" y="42" font-size="13" fill="@texto_secundario@">github.com/Dimasaas/{esc(r["repo"])}</text>
 <circle cx="560" cy="37" r="6" fill="{cl}"/>
 <text x="32" y="84" font-size="{tam}" font-weight="700" fill="url(#t)">{esc(nome)}<tspan class="pt" fill="{a2}">_</tspan></text>
 {desc}
@@ -77,5 +81,5 @@ svg{{font-family:{FONTE}}}
 if __name__ == "__main__":
     (RAIZ / "assets" / "cards").mkdir(parents=True, exist_ok=True)
     for i, r in enumerate(V["repos"]):
-        (RAIZ / "assets" / "cards" / f"{r['repo']}.svg").write_text(card(i, r), encoding="utf-8")
+        (RAIZ / "assets" / "cards" / f"{r['repo']}.svg").write_text(pintar(card(i, r)), encoding="utf-8")
     print(len(V["repos"]), "cartões")

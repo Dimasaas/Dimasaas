@@ -4,10 +4,10 @@
 
 <br>
 
-<a href="https://www.linkedin.com/in/diamantinojv/"><img src="https://img.shields.io/badge/LinkedIn-diamantinojv-2979FF?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-<a href="https://1001imoveis.com"><img src="https://img.shields.io/badge/SITE-1001imoveis.com-1b3a8a?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Site"></a>
-<img src="https://komarev.com/ghpvc/?username=Dimasaas&style=for-the-badge&color=7C4DFF&label=VISITAS" alt="Visitas">
-<a href="https://dimasaas.github.io/Dimasaas/"><img src="https://img.shields.io/badge/%E2%96%B6-VERS%C3%83O%203D-7C4DFF?style=for-the-badge" alt="Versão 3D"></a>
+<a href="https://www.linkedin.com/in/diamantinojv/"><img src="https://img.shields.io/badge/LinkedIn-diamantinojv-4D8BFF?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+<a href="https://1001imoveis.com"><img src="https://img.shields.io/badge/SITE-1001imoveis.com-7C5CFF?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Site"></a>
+<img src="https://komarev.com/ghpvc/?username=Dimasaas&style=for-the-badge&color=FF4FA3&label=VISITAS" alt="Visitas">
+<a href="https://dimasaas.github.io/Dimasaas/"><img src="https://img.shields.io/badge/%E2%96%B6-VERS%C3%83O%203D-FF4FA3?style=for-the-badge" alt="Versão 3D"></a>
 
 <br><br>
 
@@ -90,7 +90,7 @@ Código aberto que eu escrevi e mantenho. Clique no cartão para abrir o reposit
   <img alt="A cobra comendo os commits" src="https://raw.githubusercontent.com/Dimasaas/Dimasaas/output/cobra.svg" width="100%">
 </picture>
 
-<img src="https://streak-stats.demolab.com?user=Dimasaas&theme=tokyonight&hide_border=true&locale=pt_BR" alt="Sequência de commits">
+<img src="https://streak-stats.demolab.com?user=Dimasaas&background=120726&stroke=7C5CFF&ring=FF4FA3&fire=FFB86B&currStreakNum=F5EEFF&sideNums=F5EEFF&currStreakLabel=FF4FA3&sideLabels=C3A8E6&dates=C3A8E6&hide_border=true&locale=pt_BR" alt="Sequência de commits">
 
 </div>
 
@@ -121,4 +121,4 @@ $ sudo contratar --joao
 
 <br>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:7C4DFF,100:2979FF&height=120&section=footer" alt="" width="100%">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF4FA3,50:7C5CFF,100:4D8BFF&height=120&section=footer" alt="" width="100%">

@@ -3,7 +3,11 @@
 import json
 import math
 import random
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from paleta import GRUPOS, pintar  # noqa: E402
 
 RAIZ = Path(__file__).resolve().parent.parent
 M = json.loads((RAIZ / "dados" / "metricas.json").read_text(encoding="utf-8"))
@@ -20,7 +24,7 @@ def chuva(rng):
     chars = "01ABCDEF<>{}/\\|+=;:#$%&*"
     for i in range(40):
         x = 14 + i * 32
-        cor = "#7C4DFF" if i % 2 == 0 else "#2979FF"
+        cor = "@magenta@" if i % 2 == 0 else "@roxo@"
         n = rng.randint(9, 15)
         dur = rng.uniform(5.5, 11)
         atraso = -rng.uniform(0, dur)
@@ -30,7 +34,7 @@ def chuva(rng):
             op = round(0.08 + 0.55 * (k / (n - 1)) ** 1.6, 2)
             fill = cor
             if k == n - 1:
-                fill, op = "#00E5FF", 0.95
+                fill, op = "@magenta_claro@", 0.95
             dy = 0 if k == 0 else 18
             ts.append(f'<tspan x="{x}" dy="{dy}" fill="{fill}" fill-opacity="{op}">{c}</tspan>')
         cols.append(
@@ -39,33 +43,57 @@ def chuva(rng):
     return "\n".join(cols)
 
 
+def riscas_sol():
+    """faixas pretas do sol, cada vez mais grossas para baixo."""
+    out, y, esp = [], 238, 3
+    for k in range(7):
+        out.append(f'<rect x="840" y="{y}" width="400" height="{esp}" fill="@fundo_profundo@"/>')
+        y += esp + 14 + k * 2
+        esp += 2
+    return "".join(out)
+
+
+def grade():
+    """grade em perspectiva no chão: ponto de fuga em (1040, 292)."""
+    vx, vy, base = 1040, 292, 400
+    ls = []
+    for i in range(-14, 15):
+        x2 = vx + i * 150
+        ls.append(f'<line x1="{vx}" y1="{vy}" x2="{x2}" y2="{base}" stroke="@roxo@" stroke-opacity=".7" stroke-width="1"/>')
+    for k in range(1, 9):
+        y = vy + (base - vy) * (k / 8) ** 2
+        ls.append(f'<line class="hz" x1="0" y1="{y:.1f}" x2="1280" y2="{y:.1f}" stroke="@azul@" stroke-width="1.2" style="animation-delay:{-k * .35:.2f}s"/>')
+    return f'<rect x="0" y="{vy}" width="1280" height="{base - vy}" fill="url(#chao)"/>' + "".join(ls)
+
+
 def esfera(cx, cy, R):
     p = []
     p.append(f'<circle cx="{cx}" cy="{cy}" r="{R * 1.35}" fill="url(#halo)"/>')
+    p.append(f'<circle cx="{cx}" cy="{cy}" r="{R}" fill="@fundo_profundo@" opacity=".62"/>')
     p.append(f'<g transform="rotate(-18 {cx} {cy})">')
-    p.append(f'<circle cx="{cx}" cy="{cy}" r="{R}" fill="none" stroke="#B388FF" stroke-width="1.6" opacity=".9"/>')
+    p.append(f'<circle cx="{cx}" cy="{cy}" r="{R}" fill="none" stroke="@magenta@" stroke-width="1.6" opacity=".95"/>')
     for lat in (-60, -30, 0, 30, 60):
         a = math.radians(lat)
         rx = R * math.cos(a)
         p.append(
-            f'<ellipse cx="{cx}" cy="{cy + R * math.sin(a):.1f}" rx="{rx:.1f}" ry="{rx * 0.2:.1f}" fill="none" stroke="#7C4DFF" stroke-width="1.1" opacity=".75"/>'
+            f'<ellipse cx="{cx}" cy="{cy + R * math.sin(a):.1f}" rx="{rx:.1f}" ry="{rx * 0.2:.1f}" fill="none" stroke="@roxo@" stroke-width="1.1" opacity=".75"/>'
         )
     T = 14
     for k in range(6):
-        cor = "#00E5FF" if k % 2 == 0 else "#2979FF"
+        cor = "@magenta_claro@" if k % 2 == 0 else "@azul@"
         p.append(
             f'<ellipse class="mer" cx="{cx}" cy="{cy}" rx="{R}" ry="{R}" fill="none" stroke="{cor}" stroke-width="1.1" opacity=".8" style="animation-duration:{T}s;animation-delay:{-k * T / 6:.2f}s"/>'
         )
     for k, (dx, dy) in enumerate([(-0.55, -0.45), (0.5, -0.6), (0.7, 0.2), (-0.2, 0.7), (-0.75, 0.15), (0.1, -0.05)]):
         p.append(
-            f'<circle class="v" cx="{cx + dx * R:.1f}" cy="{cy + dy * R:.1f}" r="3.2" fill="#00E5FF" style="animation-delay:{k * 0.4:.1f}s"/>'
+            f'<circle class="v" cx="{cx + dx * R:.1f}" cy="{cy + dy * R:.1f}" r="3.2" fill="@magenta@" style="animation-delay:{k * 0.4:.1f}s"/>'
         )
     p.append("</g>")
     rx, ry = 215, 48
     path = f"M {cx - rx},{cy} a {rx},{ry} 0 1,0 {2 * rx},0 a {rx},{ry} 0 1,0 {-2 * rx},0"
     p.append(f'<g transform="rotate(-18 {cx} {cy})">')
-    p.append(f'<path d="{path}" fill="none" stroke="#B388FF" stroke-width="1" stroke-dasharray="3 7" opacity=".7"/>')
-    for k, cor in enumerate(("#00E5FF", "#B388FF", "#2979FF")):
+    p.append(f'<path d="{path}" fill="none" stroke="@magenta_claro@" stroke-width="1" stroke-dasharray="3 7" opacity=".7"/>')
+    for k, cor in enumerate(("@magenta@", "@magenta_claro@", "@azul@")):
         p.append(
             f'<circle r="5" fill="{cor}"><animateMotion dur="10s" begin="{-k * 3.33:.2f}s" repeatCount="indefinite" path="{path}"/></circle>'
         )
@@ -77,7 +105,7 @@ def boot():
     rng = random.Random(1001)
     n = M["commits_texto"]
     linhas = [
-        (70, "booting diamantino.os v26.11…", "#B388FF", 0.4, 28),
+        (70, "booting diamantino.os v26.11…", "@magenta_claro@", 0.4, 28),
         (100, "[ OK ] ruby on rails 8 … online", None, 1.2, 31),
         (130, "[ OK ] postgresql 17 … online", None, 2.0, 29),
         (160, f"[ OK ] {M['tecnologias']} tecnologias … carregadas", None, 2.8, 33),
@@ -88,36 +116,39 @@ def boot():
         dur = max(0.5, nch * 0.022)
         if t.startswith("[ OK ]"):
             resto = esc(t[len("[ OK ]"):])
-            conteudo = f'<tspan fill="#00E5FF">[ OK ]</tspan><tspan fill="#d9ccff">{resto}</tspan>'
+            conteudo = f'<tspan fill="@ambar@">[ OK ]</tspan><tspan fill="@texto@">{resto}</tspan>'
         else:
             conteudo = esc(t)
         fill = f' fill="{cor}"' if cor else ""
         txt.append(
             f'<text class="l" x="60" y="{y}"{fill} style="animation-delay:{d}s;animation-duration:{dur:.2f}s;animation-timing-function:steps({nch},end)">{conteudo}</text>'
         )
-    txt.append('<text class="l" x="60" y="240" style="animation-delay:4.5s;animation-duration:.4s;animation-timing-function:steps(8,end)"><tspan fill="#00E5FF">&gt;</tspan><tspan fill="#d9ccff"> whoami</tspan></text>')
+    txt.append('<text class="l" x="60" y="240" style="animation-delay:4.5s;animation-duration:.4s;animation-timing-function:steps(8,end)"><tspan fill="@ambar@">&gt;</tspan><tspan fill="@texto@"> whoami</tspan></text>')
     nome = "João Victor Diamantino"
     txt.append(
         f'''<g class="fade" style="animation-delay:5.2s">
-<text class="g2" x="60" y="292" font-size="40" font-weight="700" fill="#B388FF">{nome}</text>
-<text class="g1" x="60" y="292" font-size="40" font-weight="700" fill="#00E5FF">{nome}</text>
+<text class="g2" x="60" y="292" font-size="40" font-weight="700" fill="@azul@">{nome}</text>
+<text class="g1" x="60" y="292" font-size="40" font-weight="700" fill="@magenta@">{nome}</text>
 <text x="60" y="292" font-size="40" font-weight="700" fill="url(#nomeg)">{nome}</text>
 </g>
-<text class="fade" x="62" y="330" font-size="21" fill="#c9bdf5" style="animation-delay:5.7s">C.T.O · Goiânia</text>
-<text class="fade" x="60" y="372" font-size="21" style="animation-delay:6.2s"><tspan fill="#00E5FF">&gt;</tspan></text>
-<rect class="cur" x="84" y="356" width="12" height="20" fill="#00E5FF"/>'''
+<text class="fade" x="62" y="330" font-size="21" fill="@texto_secundario@" style="animation-delay:5.7s">C.T.O · Goiânia</text>
+<text class="fade" x="60" y="372" font-size="21" style="animation-delay:6.2s"><tspan fill="@ambar@">&gt;</tspan></text>
+<rect class="cur" x="84" y="356" width="12" height="20" fill="@ambar@"/>'''
     )
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400" role="img" aria-label="Tela de boot do DIAMANTINO.OS: João Victor Diamantino, C.T.O · Goiânia">
 <title>DIAMANTINO.OS — João Victor Diamantino · C.T.O · Goiânia</title>
 <defs>
-<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d0624"/><stop offset=".55" stop-color="#0a0a2e"/><stop offset="1" stop-color="#08143a"/></linearGradient>
-<linearGradient id="borda" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7C4DFF"/><stop offset="1" stop-color="#2979FF"/></linearGradient>
-<linearGradient id="vel" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#07031a" stop-opacity=".92"/><stop offset=".6" stop-color="#07031a" stop-opacity=".55"/><stop offset="1" stop-color="#07031a" stop-opacity="0"/></linearGradient>
-<linearGradient id="nomeg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d9ccff"/></linearGradient>
-<radialGradient id="halo"><stop offset="0" stop-color="#7C4DFF" stop-opacity=".35"/><stop offset=".6" stop-color="#2979FF" stop-opacity=".12"/><stop offset="1" stop-color="#2979FF" stop-opacity="0"/></radialGradient>
-<pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1.4" fill="#000" opacity=".28"/></pattern>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="@fundo_profundo@"/><stop offset=".55" stop-color="@fundo@"/><stop offset="1" stop-color="@fundo@"/></linearGradient>
+<linearGradient id="borda" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="@roxo@"/><stop offset="1" stop-color="@azul@"/></linearGradient>
+<linearGradient id="vel" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="@fundo_profundo@" stop-opacity=".92"/><stop offset=".6" stop-color="@fundo_profundo@" stop-opacity=".55"/><stop offset="1" stop-color="@fundo_profundo@" stop-opacity="0"/></linearGradient>
+<linearGradient id="nomeg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="@texto@"/><stop offset="1" stop-color="@magenta_claro@"/></linearGradient>
+<radialGradient id="halo"><stop offset="0" stop-color="@roxo@" stop-opacity=".35"/><stop offset=".6" stop-color="@azul@" stop-opacity=".12"/><stop offset="1" stop-color="@azul@" stop-opacity="0"/></radialGradient>
+<pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1.4" fill="@fundo_profundo@" opacity=".28"/></pattern>
 <clipPath id="card"><rect width="1280" height="400" rx="20"/></clipPath>
-<linearGradient id="faixa" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B388FF" stop-opacity="0"/><stop offset=".5" stop-color="#B388FF" stop-opacity=".10"/><stop offset="1" stop-color="#B388FF" stop-opacity="0"/></linearGradient>
+<linearGradient id="sol" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="@ambar@"/><stop offset="1" stop-color="@magenta@"/></linearGradient>
+<mask id="msol"><rect x="840" y="30" width="400" height="360" fill="@texto@"/>{riscas_sol()}</mask>
+<linearGradient id="chao" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="@roxo@" stop-opacity="0"/><stop offset="1" stop-color="@roxo@" stop-opacity=".35"/></linearGradient>
+<linearGradient id="faixa" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="@magenta_claro@" stop-opacity="0"/><stop offset=".5" stop-color="@magenta_claro@" stop-opacity=".10"/><stop offset="1" stop-color="@magenta_claro@" stop-opacity="0"/></linearGradient>
 </defs>
 <style>
 svg{{font-family:{FONTE}}}
@@ -138,6 +169,8 @@ text{{font-size:20px;white-space:pre}}
 @keyframes gira{{0%{{transform:scaleX(1)}}50%{{transform:scaleX(.03)}}100%{{transform:scaleX(1)}}}}
 .v{{animation:bate 2.4s ease-in-out infinite}}
 @keyframes bate{{0%,100%{{opacity:.25}}50%{{opacity:1}}}}
+.hz{{animation:sobe 3s ease-in-out infinite}}
+@keyframes sobe{{0%,100%{{opacity:.25}}50%{{opacity:1}}}}
 .varre{{animation:varre 7s linear infinite}}
 @keyframes varre{{from{{transform:translateY(-120px)}}to{{transform:translateY(420px)}}}}
 </style>
@@ -146,13 +179,15 @@ text{{font-size:20px;white-space:pre}}
 <g opacity=".95">
 {chuva(rng)}
 </g>
+<circle cx="1040" cy="225" r="178" fill="url(#sol)" mask="url(#msol)" opacity=".8"/>
+{grade()}
 {esfera(1040, 215, 150)}
 <rect width="1000" height="400" fill="url(#vel)"/>
 <rect width="1280" height="400" fill="url(#scan)"/>
 <rect class="varre" width="1280" height="120" fill="url(#faixa)"/>
-<rect width="1280" height="38" fill="#120a30" opacity=".9"/>
-<circle cx="26" cy="19" r="6" fill="#7C4DFF"/><circle cx="48" cy="19" r="6" fill="#2979FF"/><circle cx="70" cy="19" r="6" fill="#00E5FF"/>
-<text x="640" y="25" font-size="14" text-anchor="middle" fill="#8f7fd1">diamantino.os — tty1 — 1280×400</text>
+<rect width="1280" height="38" fill="@superficie@" opacity=".9"/>
+<circle cx="26" cy="19" r="6" fill="@roxo@"/><circle cx="48" cy="19" r="6" fill="@azul@"/><circle cx="70" cy="19" r="6" fill="@magenta@"/>
+<text x="640" y="25" font-size="14" text-anchor="middle" fill="@texto_secundario@">diamantino.os — tty1 — 1280×400</text>
 {chr(10).join(txt)}
 </g>
 <rect x="1" y="1" width="1278" height="398" rx="19" fill="none" stroke="url(#borda)" stroke-width="2"/>
@@ -177,7 +212,7 @@ def painel():
         ("31", "tecnologias", "no dia a dia, de Ruby a Docker"),
         (M["commits_texto"], "commits", "no último ano"),
         ("3", "sistemas em produção", "+ 1 app na Google Play"),
-        (str(M["repos_publicos"]), "repositórios públicos", "com código aberto de verdade"),
+        (str(M["repos_publicos"]), "repositórios públicos", "código aberto para ler e estudar"),
     ]
     larg_cel = 1280 / 4
     base = 112
@@ -203,18 +238,18 @@ def painel():
         g.append("</g>")
         partes.append("\n".join(g))
         cx = x0 + larg_cel / 2
-        partes.append(f'<text x="{cx:.0f}" y="152" text-anchor="middle" font-size="21" font-weight="700" fill="#e7deff">{esc(rot1)}</text>')
-        partes.append(f'<text x="{cx:.0f}" y="178" text-anchor="middle" font-size="15" fill="#9d8fdc">{esc(rot2)}</text>')
+        partes.append(f'<text x="{cx:.0f}" y="152" text-anchor="middle" font-size="21" font-weight="700" fill="@texto@">{esc(rot1)}</text>')
+        partes.append(f'<text x="{cx:.0f}" y="178" text-anchor="middle" font-size="15" fill="@texto_secundario@">{esc(rot2)}</text>')
         if c:
-            partes.append(f'<line x1="{x0:.0f}" y1="36" x2="{x0:.0f}" y2="184" stroke="#7C4DFF" stroke-opacity=".35" stroke-dasharray="2 6"/>')
+            partes.append(f'<line x1="{x0:.0f}" y1="36" x2="{x0:.0f}" y2="184" stroke="@roxo@" stroke-opacity=".35" stroke-dasharray="2 6"/>')
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="220" viewBox="0 0 1280 220" role="img" aria-label="{M['tecnologias']} tecnologias, {M['commits_texto']} commits no último ano, 3 sistemas em produção e 1 app na Google Play, {M['repos_publicos']} repositórios públicos">
 <title>{M['tecnologias']} tecnologias · {M['commits_texto']} commits no último ano · 3 sistemas em produção + 1 app · {M['repos_publicos']} repositórios públicos</title>
 <defs>
-<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d0624"/><stop offset="1" stop-color="#08143a"/></linearGradient>
-<linearGradient id="borda" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7C4DFF"/><stop offset="1" stop-color="#2979FF"/></linearGradient>
-<linearGradient id="numg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#00E5FF"/></linearGradient>
-<linearGradient id="brilho" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7C4DFF" stop-opacity="0"/><stop offset=".5" stop-color="#B388FF" stop-opacity=".22"/><stop offset="1" stop-color="#2979FF" stop-opacity="0"/></linearGradient>
-<pattern id="grade" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#7C4DFF" stroke-opacity=".10"/></pattern>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="@fundo_profundo@"/><stop offset="1" stop-color="@fundo@"/></linearGradient>
+<linearGradient id="borda" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="@roxo@"/><stop offset="1" stop-color="@azul@"/></linearGradient>
+<linearGradient id="numg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="@texto@"/><stop offset="1" stop-color="@magenta@"/></linearGradient>
+<linearGradient id="brilho" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="@roxo@" stop-opacity="0"/><stop offset=".5" stop-color="@magenta_claro@" stop-opacity=".22"/><stop offset="1" stop-color="@azul@" stop-opacity="0"/></linearGradient>
+<pattern id="grade" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="@roxo@" stroke-opacity=".10"/></pattern>
 <clipPath id="card"><rect width="1280" height="220" rx="20"/></clipPath>
 {chr(10).join(clips)}
 </defs>
@@ -240,6 +275,6 @@ svg{{font-family:{FONTE}}}
 
 if __name__ == "__main__":
     (RAIZ / "assets").mkdir(exist_ok=True)
-    (RAIZ / "assets" / "boot.svg").write_text(boot(), encoding="utf-8")
-    (RAIZ / "assets" / "painel.svg").write_text(painel(), encoding="utf-8")
+    (RAIZ / "assets" / "boot.svg").write_text(pintar(boot()), encoding="utf-8")
+    (RAIZ / "assets" / "painel.svg").write_text(pintar(painel()), encoding="utf-8")
     print("ok")

@@ -16,8 +16,8 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/cobra.svg?color_snake=#1b3a8a&color_dots=#ebe7f7,#d1c4ff,#b388ff,#7c4dff,#2a1052
-            dist/cobra-escura.svg?color_snake=#00E5FF&color_dots=#161233,#2a1052,#4527a0,#7C4DFF,#2979FF&dark_color_dots=#161233,#2a1052,#4527a0,#7C4DFF,#2979FF
+            dist/cobra.svg?color_snake=#7C5CFF&color_dots=#efe6ff,#e0c4f0,#c4a8ff,#9dbbff,#FF4FA3
+            dist/cobra-escura.svg?color_snake=#FFB86B&color_dots=#1e0d3d,#3b1a73,#7C5CFF,#4D8BFF,#FF4FA3
       - uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
