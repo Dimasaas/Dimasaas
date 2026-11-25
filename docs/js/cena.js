@@ -3,15 +3,15 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { HDRLoader } from 'three/addons/loaders/HDRLoader.js';
-import { criarCeu } from './ceu.js';
-import { criarPaisagem, CHAO_Y } from './paisagem.js';
-import { criarChuva } from './chuva.js';
-import { criarNucleo } from './nucleo.js';
-import { criarOrbita } from './orbita.js';
-import { criarVitrine } from './vitrine.js';
-import { criarPos, BLOOM_BASE } from './pos.js';
-import { TEMAS, CHAVES_COR } from './temas.js';
-import { TECNOLOGIAS, PROJETOS } from './dados.js';
+import { criarCeu } from './ceu.js?v=20261125b';
+import { criarPaisagem, CHAO_Y } from './paisagem.js?v=20261125b';
+import { criarChuva } from './chuva.js?v=20261125b';
+import { criarNucleo } from './nucleo.js?v=20261125b';
+import { criarOrbita } from './orbita.js?v=20261125b';
+import { criarVitrine } from './vitrine.js?v=20261125b';
+import { criarPos, BLOOM_BASE } from './pos.js?v=20261125b';
+import { TEMAS, CHAVES_COR } from './temas.js?v=20261125b';
+import { TECNOLOGIAS, PROJETOS } from './dados.js?v=20261125b';
 
 const V3 = THREE.Vector3;
 export const NUCLEO_Y = 1.6;
@@ -73,7 +73,7 @@ export async function criarCena(canvas, { og = false, progresso = () => {}, even
   cena.add(paisagem.grupo);
   const chuva = criarChuva(paleta, { colunas: toque ? 150 : 250 });
   cena.add(chuva.malha);
-  const nucleo = criarNucleo(paleta, env, { particulas: toque ? 3600 : 7500, detalhe: toque ? 9 : 11 });
+  const nucleo = criarNucleo(paleta, env, { particulas: toque ? 3600 : 7500, detalhe: toque ? 9 : 11, escalaGema: og ? 1.75 : 1.28 });
   nucleo.grupo.position.y = NUCLEO_Y;
   cena.add(nucleo.grupo);
   const orbita = criarOrbita(TECNOLOGIAS, paleta, env);

@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400" role="img" aria-label="Tela de boot do DIAMANTINO.OS: João Victor Diamantino, C.T.O · Goiânia">
-<title>DIAMANTINO.OS — João Victor Diamantino · C.T.O · Goiânia</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400" role="img" aria-label="Tela de boot do DIAMANTINO.OS: João Victor Diamantino · Goiânia">
+<title>DIAMANTINO.OS — João Victor Diamantino · Goiânia</title>
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a0418"/><stop offset=".55" stop-color="#120726"/><stop offset="1" stop-color="#120726"/></linearGradient>
 <linearGradient id="borda" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7C5CFF"/><stop offset="1" stop-color="#4D8BFF"/></linearGradient>
@@ -128,7 +128,7 @@ text{font-size:20px;white-space:pre}
 <text class="g1" x="60" y="292" font-size="40" font-weight="700" fill="#FF4FA3">João Victor Diamantino</text>
 <text x="60" y="292" font-size="40" font-weight="700" fill="url(#nomeg)">João Victor Diamantino</text>
 </g>
-<text class="fade" x="62" y="330" font-size="21" fill="#C3A8E6" style="animation-delay:5.7s">C.T.O · Goiânia</text>
+<text class="fade" x="62" y="330" font-size="21" fill="#C3A8E6" style="animation-delay:5.7s">1001 Negócios Imobiliários · Goiânia</text>
 <text class="fade" x="60" y="372" font-size="21" style="animation-delay:6.2s"><tspan fill="#FFB86B">&gt;</tspan></text>
 <rect class="cur" x="84" y="356" width="12" height="20" fill="#FFB86B"/>
 </g>

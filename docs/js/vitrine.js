@@ -1,7 +1,7 @@
 // A vitrine: os projetos como painéis de vidro num carrossel sobre a grade. Arrastar gira,
 // clicar no painel da frente abre o repositório, clicar num do lado traz ele para a frente.
 import * as THREE from 'three';
-import { SYNTHWAVE as S } from './temas.js';
+import { SYNTHWAVE as S } from './temas.js?v=20261125b';
 
 const L = 1024, A = 640;
 

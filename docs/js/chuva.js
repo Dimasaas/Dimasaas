@@ -1,7 +1,7 @@
 // Chuva de caracteres no céu: colunas instanciadas, cada uma uma faixa vertical cujo shader
 // desenha os glifos, as gotas caindo, a luz do ponteiro (que abre a cortina) e a onda do clique.
 import * as THREE from 'three';
-import { HASH } from './glsl.js';
+import { HASH } from './glsl.js?v=20261125b';
 
 const KATAKANA = Array.from({ length: 56 }, (_, i) => String.fromCharCode(0xFF66 + i));
 

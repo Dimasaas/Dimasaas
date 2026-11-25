@@ -1,7 +1,7 @@
 // Paisagem synthwave: chão com grade neon em perspectiva (com reflexo do sol, brilho no ponteiro
 // e onda no clique) e um anel de montanhas em wireframe no horizonte.
 import * as THREE from 'three';
-import { SOL_GLSL, SOL_DIR, SOL_RAIO } from './ceu.js';
+import { SOL_GLSL, SOL_DIR, SOL_RAIO } from './ceu.js?v=20261125b';
 
 export const CHAO_Y = -10;
 

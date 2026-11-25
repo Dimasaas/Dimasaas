@@ -1,8 +1,8 @@
 // Entrada da página: tela de boot, fontes, cena 3D, interface (dock, legenda, vitrine, rótulos,
 // dica flutuante), atalhos, código Konami e "sudo". Sem WebGL2 ou com movimento reduzido, fica
 // no modo leve (o conteúdo em texto do index.html).
-import { GRUPOS, TECNOLOGIAS, PROJETOS } from './dados.js';
-import { criarTerminal } from './terminal.js';
+import { GRUPOS, TECNOLOGIAS, PROJETOS } from './dados.js?v=20261125b';
+import { criarTerminal } from './terminal.js?v=20261125b';
 
 const html = document.documentElement;
 const og = html.classList.contains('og');
@@ -77,7 +77,7 @@ async function iniciar() {
     boot.linha('three', 'carregando three.js r182');
     boot.progresso(0.12);
   }
-  const { criarCena } = await import('./cena.js');
+  const { criarCena } = await import('./cena.js?v=20261125b');
   if (!og) { boot.linha('three', 'three.js r182', true); boot.progresso(0.25); }
 
   const ui = criarUI();

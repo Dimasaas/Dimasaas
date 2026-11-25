@@ -2,10 +2,24 @@
 // malha geodésica em wireframe que respira com ruído, estufa na direção do ponteiro e ondula no
 // clique; em volta, um disco de partículas que foge do ponteiro.
 import * as THREE from 'three';
-import { RUIDO, HASH, EQUIRET } from './glsl.js';
-import { SOL_DIR } from './ceu.js';
+import { RUIDO, HASH, EQUIRET } from './glsl.js?v=20261125b';
+import { SOL_DIR } from './ceu.js?v=20261125b';
 
 const V3 = THREE.Vector3;
+const CIANO = new THREE.Color('#29F3FF');
+const MAGENTA_NEON = new THREE.Color('#FF4FA3');
+
+// glitch: fatias horizontais da pedra escorregam para o lado durante um surto (uGlitch > 0)
+const GLITCH = /* glsl */ `
+float hGl(float n){ return fract(sin(n) * 43758.5453); }
+vec3 glitchar(vec3 p, float t, float g){
+  float fatia = floor(p.y * 9.0 + floor(t * 24.0) * 3.0);
+  float h = hGl(fatia);
+  p.x += g * step(0.55, h) * (h - 0.75) * 0.6;
+  p.z += g * step(0.8, hGl(fatia + 7.0)) * 0.12;
+  return p;
+}
+`;
 
 function geometriaDiamante() {
   const T = [], S = [], P = [], G = [], Gb = [];
@@ -77,7 +91,7 @@ float deslocar(vec3 n, out float luz, out float onda) {
 }
 `;
 
-export function criarNucleo(paleta, envTex, { particulas = 7000, detalhe = 13 } = {}) {
+export function criarNucleo(paleta, envTex, { particulas = 7000, detalhe = 13, escalaGema = 1.28, glitchFixo = 0 } = {}) {
   const grupo = new THREE.Group();     // posição do núcleo na cena
   const giro = new THREE.Group();      // rotação arrastável (diamante + malha)
   grupo.add(giro);
@@ -90,20 +104,23 @@ export function criarNucleo(paleta, envTex, { particulas = 7000, detalhe = 13 } 
     uLuz1: { value: new V3(0.4, 0.8, 0.45).normalize() }, uLuz2: { value: new V3(-0.6, 0.5, 0.6).normalize() },
     uDisp: { value: 0.06 }, uIntens: { value: 1 }, uFlash: { value: 0 }, uHover: { value: 0 },
     uSol: { value: paleta.sol0 }, uSolDir: { value: SOL_DIR },
+    uCiano: { value: CIANO }, uTempo: { value: 0 }, uGlitch: { value: 0 },
   };
   const diamante = new THREE.Mesh(geometriaDiamante(), new THREE.ShaderMaterial({
     uniforms: uGema,
     vertexShader: /* glsl */ `
+      uniform float uTempo, uGlitch;
       varying vec3 vN, vW, vNo;
+      ${GLITCH}
       void main(){
         vNo = normal;
         vN = normalize(mat3(modelMatrix) * normal);
-        vec4 w = modelMatrix * vec4(position, 1.0); vW = w.xyz;
+        vec4 w = modelMatrix * vec4(glitchar(position, uTempo, uGlitch), 1.0); vW = w.xyz;
         gl_Position = projectionMatrix * viewMatrix * w;
       }`,
     fragmentShader: /* glsl */ `
       uniform sampler2D tEnv; uniform mat3 uEnvRot; uniform vec3 uBaixo, uMeio, uAlto, uBrilho, uLuz1, uLuz2, uSol, uSolDir;
-      uniform float uDisp, uIntens, uFlash, uHover;
+      uniform float uDisp, uIntens, uFlash, uHover, uTempo, uGlitch; uniform vec3 uCiano;
       varying vec3 vN, vW, vNo;
       ${EQUIRET}
       // o HDRI dá a estrutura das luzes; a cor vem da paleta (âmbar embaixo, magenta no meio, azul no alto),
@@ -138,19 +155,49 @@ export function criarNucleo(paleta, envTex, { particulas = 7000, detalhe = 13 } 
           vec3 s = envPal(E, faceta);
           if (i == 0) acc.r = s.r; else if (i == 1) acc.g = s.g; else acc.b = s.b;
         }
-        acc *= 1.15;
+        acc *= 0.85;
         vec3 col = mix(acc, refl, F);
         float g1 = pow(max(dot(R, uLuz1), 0.0), 700.0);
         float g2 = pow(max(dot(R, uLuz2), 0.0), 900.0);
         col += uBrilho * (g1 * 7.0 + g2 * 5.0);
         col *= uIntens * (1.0 + uHover * 0.35);
         col += uMeio * uFlash;
+        // cyberpunk: borda ciano, scanlines e a faixa de varredura que desce pela pedra
+        col += uCiano * pow(1.0 - NdV, 2.2) * 1.3;
+        float scan = smoothstep(0.06, 0.0, abs(fract(vW.y * 0.45 - uTempo * 0.35) - 0.5));
+        col += mix(uCiano, uMeio, 0.35) * scan * 0.55;
+        col *= 0.82 + 0.18 * step(0.5, fract(gl_FragCoord.y * 0.25));
+        col.r += uGlitch * 0.25; col.b += uGlitch * 0.35;
         gl_FragColor = vec4(col, 1.0);
       }`,
   }));
-  diamante.scale.setScalar(1.28);
+  diamante.scale.setScalar(escalaGema);
   diamante.rotation.x = 0.2;
   giro.add(diamante);
+
+  // arestas em neon (ciano embaixo, magenta em cima) com o mesmo glitch da pedra
+  const uAresta = { uTempo: uGema.uTempo, uGlitch: uGema.uGlitch, uCiano: uGema.uCiano, uMag: { value: MAGENTA_NEON }, uIntens: uGema.uIntens };
+  const arestas = new THREE.LineSegments(new THREE.EdgesGeometry(diamante.geometry, 1), new THREE.ShaderMaterial({
+    uniforms: uAresta, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+    vertexShader: /* glsl */ `
+      uniform float uTempo, uGlitch; varying float vY;
+      ${GLITCH}
+      void main(){
+        vec3 p = glitchar(position, uTempo, uGlitch) * 1.004;
+        vY = (modelMatrix * vec4(p, 1.0)).y;
+        gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4(p, 1.0);
+      }`,
+    fragmentShader: /* glsl */ `
+      uniform float uTempo, uIntens; uniform vec3 uCiano, uMag; varying float vY;
+      void main(){
+        float k = clamp(vY * 0.55 + 0.5, 0.0, 1.0);
+        float scan = smoothstep(0.08, 0.0, abs(fract(vY * 0.45 - uTempo * 0.35) - 0.5));
+        float pulso = 0.75 + 0.25 * sin(uTempo * 6.0 + vY * 9.0);
+        gl_FragColor = vec4(mix(uCiano, uMag, k) * (pulso + scan * 2.5) * 2.6 * uIntens, 1.0);
+      }`,
+  }));
+  arestas.renderOrder = 3;
+  diamante.add(arestas);
 
   // brilho atrás do diamante
   const halo = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.ShaderMaterial({
@@ -335,7 +382,7 @@ export function criarNucleo(paleta, envTex, { particulas = 7000, detalhe = 13 } 
   const vel = new THREE.Vector2(0, 0);     // velocidade angular do arrasto
   const qTmp = new THREE.Quaternion(), eixoX = new V3(1, 0, 0), eixoY = new V3(0, 1, 0);
   const env = new THREE.Matrix4();
-  let boom = 0, flash = 0, burst = 0, giroExtra = 0, hover = 0;
+  let boom = 0, flash = 0, burst = 0, giroExtra = 0, hover = 0, glitchT = 0, proximoGlitch = 1.5;
   const ptrDirAlvo = new V3(0, 0, 1);
   let ptrForcaAlvo = 0;
 
@@ -350,6 +397,13 @@ export function criarNucleo(paleta, envTex, { particulas = 7000, detalhe = 13 } 
       vel.multiplyScalar(atrito);
       giroExtra *= Math.exp(-dt * 1.2);
       diamante.rotation.y += dt * (0.35 + giroExtra);
+      uGema.uTempo.value = t;
+      // surto de glitch a cada poucos segundos (curto, como sinal caindo)
+      proximoGlitch -= dt;
+      if (proximoGlitch <= 0) { glitchT = 0.18 + Math.random() * 0.22; proximoGlitch = 2.5 + Math.random() * 3.5; }
+      glitchT = Math.max(0, glitchT - dt);
+      uGema.uGlitch.value = glitchFixo || (glitchT > 0 ? 0.6 + Math.random() * 0.4 : 0);
+      uGema.uDisp.value = 0.06 + uGema.uGlitch.value * 0.2;
       env.makeRotationY(t * 0.05);
       uGema.uEnvRot.value.setFromMatrix4(env);
       boom *= Math.exp(-dt * 2.4); flash *= Math.exp(-dt * 4.0); burst *= Math.exp(-dt * 2.2);

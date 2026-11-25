@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://dimasaas.github.io/Dimasaas/"><img src="assets/boot.svg" alt="DIAMANTINO.OS: João Victor Diamantino, C.T.O, Goiânia" width="100%"></a>
+<a href="https://dimasaas.github.io/Dimasaas/"><img src="assets/boot.svg" alt="DIAMANTINO.OS: João Victor Diamantino, Goiânia" width="100%"></a>
 
 <br>
 
@@ -11,7 +11,7 @@
 
 <br><br>
 
-**C.T.O na 1001 Negócios Imobiliários** · Goiânia, GO
+**1001 Negócios Imobiliários** · Goiânia, GO
 
 Eu construo o software que roda a operação de uma imobiliária de loteamentos, e escrevo o código que fica em volta dele.
 
@@ -85,12 +85,7 @@ Projetos que eu escrevi e mantenho. Clique no cartão para abrir o repositório.
 
 <img src="profile-3d-contrib/profile-night-rainbow.svg" alt="Meus commits em 3D" width="100%">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Dimasaas/Dimasaas/output/cobra-escura.svg">
-  <img alt="A cobra comendo os commits" src="https://raw.githubusercontent.com/Dimasaas/Dimasaas/output/cobra.svg" width="100%">
-</picture>
-
-<img src="https://streak-stats.demolab.com?user=Dimasaas&background=120726&stroke=7C5CFF&ring=FF4FA3&fire=FFB86B&currStreakNum=F5EEFF&sideNums=F5EEFF&currStreakLabel=FF4FA3&sideLabels=C3A8E6&dates=C3A8E6&hide_border=true&locale=pt_BR" alt="Sequência de commits">
+<img src="https://raw.githubusercontent.com/Dimasaas/Dimasaas/output/jogo.svg" alt="LAPIDÁRIO.EXE: uma nave-diamante lapida os dias com commit do último ano" width="100%">
 
 </div>
 

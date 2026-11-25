@@ -1,7 +1,7 @@
 // Céu synthwave: degradê até a névoa magenta do horizonte, sol listrado (âmbar → magenta → roxo),
 // nebulosa discreta no alto (assada uma vez numa textura) e estrelas.
 import * as THREE from 'three';
-import { RUIDO, EQUIRET } from './glsl.js';
+import { RUIDO, EQUIRET } from './glsl.js?v=20261125b';
 
 // Direção do sol: no horizonte, para o fundo da cena (-z), um pouco acima da linha.
 export const SOL_DIR = new THREE.Vector3(0, Math.sin(THREE.MathUtils.degToRad(7.5)), -Math.cos(THREE.MathUtils.degToRad(7.5))).normalize();

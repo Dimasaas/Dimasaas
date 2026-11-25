@@ -3,7 +3,6 @@
 
 export const PERFIL = {
   nome: 'João Victor Diamantino',
-  cargo: 'C.T.O',
   github: 'https://github.com/Dimasaas',
   linkedin: 'https://www.linkedin.com/in/diamantinojv/',
 };

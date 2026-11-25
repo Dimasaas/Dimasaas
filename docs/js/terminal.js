@@ -1,6 +1,6 @@
 // Terminal de mentira: abre ao digitar "sudo" em qualquer lugar (ou pelo botão) e entende
 // alguns comandos. O principal é "sudo contratar --joao".
-import { PERFIL, GRUPOS, PROJETOS, TECNOLOGIAS } from './dados.js';
+import { PERFIL, GRUPOS, PROJETOS, TECNOLOGIAS } from './dados.js?v=20261125b';
 
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const espera = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -45,7 +45,7 @@ export function criarTerminal(raiz, acoes) {
       '  <b>clear</b> · <b>exit</b>',
     ],
     ajuda: () => COMANDOS.help(),
-    whoami: () => [`<span class="t-mag">${esc(PERFIL.nome)}</span>`, `${PERFIL.cargo} · Goiânia, GO`, 'eu construo o software que roda a operação de uma imobiliária de loteamentos.'],
+    whoami: () => [`<span class="t-mag">${esc(PERFIL.nome)}</span>`, `1001 Negócios Imobiliários · Goiânia, GO`, 'eu construo o software que roda a operação de uma imobiliária de loteamentos.'],
     neofetch: () => [
       '<pre class="t-ascii t-mag">' + esc(String.raw`
       ________
@@ -60,7 +60,7 @@ export function criarTerminal(raiz, acoes) {
       `<span class="t-mag">visitante</span>@<span class="t-mag">diamantino</span>`,
       '----------------------------',
       `<b>SO</b>: DIAMANTINO.OS 3.1 (synthwave)`,
-      `<b>Dono</b>: ${esc(PERFIL.nome)}, ${PERFIL.cargo}`,
+      `<b>Dono</b>: ${esc(PERFIL.nome)}`,
       `<b>Local</b>: Goiânia, GO`,
       `<b>Stack</b>: ${TECNOLOGIAS.length} tecnologias em 3 anéis`,
       `<b>Vitrine</b>: ${PROJETOS.length} projetos de código aberto`,

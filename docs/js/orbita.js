@@ -1,7 +1,7 @@
 // A órbita: 3 anéis inclinados em volta do núcleo com as 31 tecnologias como cristais
 // (cor do grupo, reflexo do HDRI). O hover é por distância na tela (alvo generoso no toque).
 import * as THREE from 'three';
-import { EQUIRET } from './glsl.js';
+import { EQUIRET } from './glsl.js?v=20261125b';
 
 export const ANEIS = [
   { raio: 3.2, rotX: 1.16, rotZ: 0.26, vel: 0.085 },
