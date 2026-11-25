@@ -157,9 +157,9 @@ def financeiro():
     acum = [rec[i] - des[i] for i in range(10)]
     pts = " ".join(f'{"M" if i == 0 else "L"}{641 + i * 59:.0f},{base - (acum[i] + 4) * esc_y:.1f}' for i in range(10))
     c.append(f'<path class="tr" d="{pts}" pathLength="1000" fill="none" stroke="#00E5FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="animation-delay:1s"/>')
-    c.append('<circle cx="600" cy="272" r="5" fill="#7C4DFF"/>' + t(610, 276, "receitas", 11, "#9d8fdc"))
-    c.append('<circle cx="690" cy="272" r="5" fill="#2979FF"/>' + t(700, 276, "despesas", 11, "#9d8fdc"))
-    c.append('<circle cx="780" cy="272" r="5" fill="#00E5FF"/>' + t(790, 276, "saldo do mês", 11, "#9d8fdc"))
+    c.append('<circle cx="930" cy="272" r="5" fill="#7C4DFF"/>' + t(940, 276, "receitas", 11, "#9d8fdc"))
+    c.append('<circle cx="1010" cy="272" r="5" fill="#2979FF"/>' + t(1020, 276, "despesas", 11, "#9d8fdc"))
+    c.append('<circle cx="1090" cy="272" r="5" fill="#00E5FF"/>' + t(1100, 276, "saldo", 11, "#9d8fdc"))
     # lançamentos
     c.append('<rect x="580" y="496" width="650" height="220" rx="12" fill="#170f3d" stroke="#7C4DFF" stroke-opacity=".3"/>')
     c.append(t(600, 524, "Últimos lançamentos", 14, "#efe9ff", weight=700))
