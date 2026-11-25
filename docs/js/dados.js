@@ -8,15 +8,16 @@ export const PERFIL = {
   linkedin: 'https://www.linkedin.com/in/diamantinojv/',
 };
 
-// Cor de cada grupo: roxo e azul na base, com acentos para separar os grupos.
+// Cor de cada grupo, tirada da paleta Synthwave: as cores puras (magenta, roxo, azul, âmbar,
+// lavanda) e dois pontos do meio dos degradês da paleta (magenta↔roxo e âmbar↔magenta).
 export const GRUPOS = [
-  { nome: 'Linguagens e frameworks', anel: 1, cor: '#B388FF', itens: ['Ruby', 'Ruby on Rails 8', 'Hotwire', 'JavaScript', 'Node.js', 'Python', 'Bash'] },
-  { nome: 'Dados', anel: 1, cor: '#00E5FF', itens: ['PostgreSQL 17', 'SQLite'] },
-  { nome: 'Infra e DevOps', anel: 2, cor: '#448AFF', itens: ['Linux (Ubuntu)', 'Docker', 'Docker Compose', 'Caddy', 'Cloudflare', 'systemd', 'Uptime Kuma', 'rclone', 'Git/GitHub'] },
-  { nome: 'Gestão de TI', anel: 2, cor: '#1DE9B6', itens: ['MeshCentral', 'AdGuard Home'] },
-  { nome: 'Integrações', anel: 3, cor: '#FF4FD8', itens: ['ERP Senior (ProUAU)', 'WhatsApp Business Platform', 'APIs do Sicoob (mTLS + OAuth2)', 'Clicksign', 'Google Workspace', 'NFS-e'] },
-  { nome: 'IA e mídia', anel: 3, cor: '#FFC24B', itens: ['LLM (API)', 'RAG', 'faster-whisper', 'FFmpeg'] },
-  { nome: 'Mobile', anel: 3, cor: '#7C4DFF', itens: ['Android (Google Play)'] },
+  { nome: 'Linguagens e frameworks', anel: 1, cor: '#FF4FA3', itens: ['Ruby', 'Ruby on Rails 8', 'Hotwire', 'JavaScript', 'Node.js', 'Python', 'Bash'] },
+  { nome: 'Dados', anel: 1, cor: '#FFB86B', itens: ['PostgreSQL 17', 'SQLite'] },
+  { nome: 'Infra e DevOps', anel: 2, cor: '#7C5CFF', itens: ['Linux (Ubuntu)', 'Docker', 'Docker Compose', 'Caddy', 'Cloudflare', 'systemd', 'Uptime Kuma', 'rclone', 'Git/GitHub'] },
+  { nome: 'Gestão de TI', anel: 2, cor: '#C3A8E6', itens: ['MeshCentral', 'AdGuard Home'] },
+  { nome: 'Integrações', anel: 3, cor: '#4D8BFF', itens: ['ERP Senior (ProUAU)', 'WhatsApp Business Platform', 'APIs do Sicoob (mTLS + OAuth2)', 'Clicksign', 'Google Workspace', 'NFS-e'] },
+  { nome: 'IA e mídia', anel: 3, cor: '#BD55D1', itens: ['LLM (API)', 'RAG', 'faster-whisper', 'FFmpeg'] },
+  { nome: 'Mobile', anel: 3, cor: '#FF8387', itens: ['Android (Google Play)'] },
 ];
 
 export const TECNOLOGIAS = GRUPOS.flatMap((g, gi) =>

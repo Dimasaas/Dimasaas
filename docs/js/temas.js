@@ -1,45 +1,72 @@
-// Temas de cor. O primeiro é o padrão (roxo e azul); o código Konami passa para o próximo.
-// Cada cor vira uniform nos shaders e variável no CSS; a troca é interpolada.
+// Temas de cor. O padrão é a paleta Synthwave do perfil (fonte única de cor, vitrine/_ferramentas/
+// paleta-synthwave.json): fundo #120726/#0a0418, magenta #FF4FA3 de destaque, roxo #7C5CFF,
+// azul #4D8BFF, âmbar #FFB86B só em detalhe, texto #F5EEFF/#C3A8E6.
+// Os outros dois são o easter egg do código Konami.
+
+export const SYNTHWAVE = {
+  fundo: '#120726', fundoProfundo: '#0a0418', superficie: '#1e0d3d', roxoProfundo: '#2b0f52',
+  magenta: '#FF4FA3', roxo: '#7C5CFF', azul: '#4D8BFF', ambar: '#FFB86B',
+  texto: '#F5EEFF', textoSecundario: '#C3A8E6',
+};
+
+const S = SYNTHWAVE;
 
 export const TEMAS = [
   {
-    id: 'diamantino', nome: 'DIAMANTINO',
-    fundo: ['#03030b', '#0b0724'],
-    nebulosa: ['#2a1052', '#1b3a8a', '#7C4DFF'],
-    chuvaCabeca: '#d9f4ff', chuvaA: '#8f6bff', chuvaB: '#2364ff',
-    cascaA: '#7C4DFF', cascaB: '#2979FF', cascaBrilho: '#00E5FF',
-    particulaA: '#B388FF', particulaB: '#2979FF', particulaC: '#00E5FF', particulaAcento: '#FF4FD8',
-    gemaA: '#b9a4ff', gemaB: '#7fb6ff',
-    css: { c1: '#7C4DFF', c2: '#2979FF', c3: '#00E5FF', c4: '#B388FF', fundo: '#05060f' },
+    id: 'synthwave', nome: 'SYNTHWAVE',
+    ceuZenite: S.fundoProfundo, ceuHorizonte: S.roxoProfundo, neblina: S.magenta,
+    neb0: S.roxoProfundo, neb1: S.roxo, neb2: S.magenta,
+    sol0: S.ambar, sol1: S.magenta, sol2: S.roxo,
+    gradePerto: S.azul, gradeLonge: S.roxo, chao: S.fundoProfundo,
+    montanhaLinha: S.roxo, montanhaCrista: S.magenta, montanhaFundo: S.fundoProfundo,
+    chuvaCabeca: S.texto, chuvaA: S.magenta, chuvaB: S.roxo, chuvaC: S.azul,
+    cascaA: S.roxo, cascaB: S.azul, cascaBrilho: S.magenta,
+    particulaA: S.roxo, particulaB: S.azul, particulaC: S.magenta, particulaAcento: S.ambar,
+    gemaBaixo: S.ambar, gemaMeio: S.magenta, gemaAlto: S.azul,
+    anelA: S.roxo, anelB: S.azul, painel: S.magenta,
+    css: {
+      fundo: S.fundo, fundoProfundo: S.fundoProfundo, superficie: S.superficie,
+      destaque: S.magenta, roxo: S.roxo, azul: S.azul, ambar: S.ambar,
+      texto: S.texto, texto2: S.textoSecundario, borda: 'rgba(255,79,163,0.28)',
+    },
   },
   {
     id: 'matrix', nome: 'MATRIX CLÁSSICO',
-    fundo: ['#010603', '#03140b'],
-    nebulosa: ['#05301a', '#0b4d2a', '#13ff8a'],
-    chuvaCabeca: '#e6ffef', chuvaA: '#22ff88', chuvaB: '#00a347',
+    ceuZenite: '#010603', ceuHorizonte: '#04170c', neblina: '#22ff88',
+    neb0: '#03200f', neb1: '#0b5c2e', neb2: '#39ff88',
+    sol0: '#d4ff6b', sol1: '#22ff88', sol2: '#00a347',
+    gradePerto: '#00e676', gradeLonge: '#00a347', chao: '#010603',
+    montanhaLinha: '#00c853', montanhaCrista: '#b9ffd6', montanhaFundo: '#010603',
+    chuvaCabeca: '#e6ffef', chuvaA: '#22ff88', chuvaB: '#00a347', chuvaC: '#00e676',
     cascaA: '#00e676', cascaB: '#00b248', cascaBrilho: '#b9ffd6',
-    particulaA: '#69f0ae', particulaB: '#00c853', particulaC: '#ccff90', particulaAcento: '#00e5ff',
-    gemaA: '#a8ffcf', gemaB: '#59ff9d',
-    css: { c1: '#00E676', c2: '#00C853', c3: '#B9FFD6', c4: '#69F0AE', fundo: '#020805' },
+    particulaA: '#69f0ae', particulaB: '#00c853', particulaC: '#b9ffd6', particulaAcento: '#ccff90',
+    gemaBaixo: '#ccff90', gemaMeio: '#22ff88', gemaAlto: '#00c853',
+    anelA: '#00e676', anelB: '#00a347', painel: '#00e676',
+    css: {
+      fundo: '#020a05', fundoProfundo: '#010603', superficie: '#06200f',
+      destaque: '#22FF88', roxo: '#00C853', azul: '#69F0AE', ambar: '#CCFF90',
+      texto: '#E8FFF1', texto2: '#9ED9B5', borda: 'rgba(34,255,136,0.3)',
+    },
   },
   {
-    id: 'synthwave', nome: 'SYNTHWAVE',
-    fundo: ['#07020f', '#1a0633'],
-    nebulosa: ['#4a0b5e', '#1b1f8a', '#ff2bd6'],
-    chuvaCabeca: '#ffe6fb', chuvaA: '#ff4fd8', chuvaB: '#7C4DFF',
-    cascaA: '#ff2bd6', cascaB: '#7C4DFF', cascaBrilho: '#ffc24b',
-    particulaA: '#ff6ec7', particulaB: '#7C4DFF', particulaC: '#ffc24b', particulaAcento: '#00E5FF',
-    gemaA: '#ffb3ee', gemaB: '#ffd27a',
-    css: { c1: '#FF2BD6', c2: '#7C4DFF', c3: '#FFC24B', c4: '#FF6EC7', fundo: '#0a0314' },
-  },
-  {
-    id: 'aurora', nome: 'AURORA',
-    fundo: ['#02070a', '#061a22'],
-    nebulosa: ['#0b3b46', '#2a1052', '#1de9b6'],
-    chuvaCabeca: '#e0fff7', chuvaA: '#1de9b6', chuvaB: '#2979FF',
-    cascaA: '#1de9b6', cascaB: '#B388FF', cascaBrilho: '#e0fff7',
-    particulaA: '#64ffda', particulaB: '#B388FF', particulaC: '#00E5FF', particulaAcento: '#FFC24B',
-    gemaA: '#a7fff0', gemaB: '#c9b6ff',
-    css: { c1: '#1DE9B6', c2: '#B388FF', c3: '#00E5FF', c4: '#64FFDA', fundo: '#03090c' },
+    id: 'meia-noite', nome: 'MEIA-NOITE',
+    ceuZenite: '#05030f', ceuHorizonte: '#101a4a', neblina: S.azul,
+    neb0: S.superficie, neb1: S.azul, neb2: S.roxo,
+    sol0: S.textoSecundario, sol1: S.roxo, sol2: S.azul,
+    gradePerto: S.azul, gradeLonge: S.roxo, chao: '#05030f',
+    montanhaLinha: S.azul, montanhaCrista: S.textoSecundario, montanhaFundo: '#05030f',
+    chuvaCabeca: S.texto, chuvaA: S.azul, chuvaB: S.roxo, chuvaC: S.textoSecundario,
+    cascaA: S.azul, cascaB: S.roxo, cascaBrilho: S.texto,
+    particulaA: S.azul, particulaB: S.roxo, particulaC: S.textoSecundario, particulaAcento: S.magenta,
+    gemaBaixo: S.textoSecundario, gemaMeio: S.roxo, gemaAlto: S.azul,
+    anelA: S.azul, anelB: S.roxo, painel: S.azul,
+    css: {
+      fundo: '#0a0b1f', fundoProfundo: '#05030f', superficie: '#141a3d',
+      destaque: S.azul, roxo: S.roxo, azul: S.textoSecundario, ambar: S.ambar,
+      texto: S.texto, texto2: S.textoSecundario, borda: 'rgba(77,139,255,0.3)',
+    },
   },
 ];
+
+// Chaves de cor que viram THREE.Color compartilhado entre os shaders.
+export const CHAVES_COR = Object.keys(TEMAS[0]).filter((k) => !['id', 'nome', 'css'].includes(k));
