@@ -20,9 +20,9 @@ svg{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
 <rect width="600" height="300" fill="url(#bg)"/>
 <rect width="600" height="300" fill="url(#p)"/>
 <rect class="s" width="260" height="300" fill="#00E5FF" opacity=".10"/>
-<text x="32" y="42" font-size="13" fill="#8f7fd1">github.com/Dimasaas/</text>
+<text x="32" y="42" font-size="13" fill="#8f7fd1">github.com/Dimasaas/dias-uteis-br</text>
 <circle cx="560" cy="37" r="6" fill="#CC342D"/>
-<text x="32" y="84" font-size="30" font-weight="700" fill="url(#t)">dias-uteis-br<tspan class="pt" fill="#7C4DFF">_</tspan></text>
+<text x="32" y="84" font-size="38" font-weight="700" fill="url(#t)">dias-uteis-br<tspan class="pt" fill="#7C4DFF">_</tspan></text>
 <text x="32" y="122" font-size="16" fill="#cfc4f5">Dias úteis e feriados no Brasil, Ruby com</text><text x="32" y="146" font-size="16" fill="#cfc4f5">espelho em JS.</text>
 <g><rect x="32" y="244" width="54" height="26" rx="13" fill="#00E5FF" fill-opacity=".16" stroke="#00E5FF" stroke-opacity=".7"/><text x="59" y="262" text-anchor="middle" font-size="13" fill="#efe9ff">Ruby</text></g><g><rect x="94" y="244" width="104" height="26" rx="13" fill="#00E5FF" fill-opacity=".16" stroke="#00E5FF" stroke-opacity=".7"/><text x="146" y="262" text-anchor="middle" font-size="13" fill="#efe9ff">JavaScript</text></g>
 </g>

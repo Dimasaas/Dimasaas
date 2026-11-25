@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300" role="img" aria-label="discord-loja-bot: Bot de loja no Discord com tickets, pagamento plugável e setup idempotente.">
-<title>discord-loja-bot</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300" role="img" aria-label="Balcão: Bot de loja no Discord com tickets, pagamento plugável e setup idempotente.">
+<title>Balcão</title>
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d0624"/><stop offset="1" stop-color="#08143a"/></linearGradient>
 <linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#00E5FF"/><stop offset="1" stop-color="#7C4DFF"/></linearGradient>
@@ -20,9 +20,9 @@ svg{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
 <rect width="600" height="300" fill="url(#bg)"/>
 <rect width="600" height="300" fill="url(#p)"/>
 <rect class="s" width="260" height="300" fill="#00E5FF" opacity=".10"/>
-<text x="32" y="42" font-size="13" fill="#8f7fd1">github.com/Dimasaas/</text>
+<text x="32" y="42" font-size="13" fill="#8f7fd1">github.com/Dimasaas/balcao</text>
 <circle cx="560" cy="37" r="6" fill="#3178C6"/>
-<text x="32" y="84" font-size="30" font-weight="700" fill="url(#t)">discord-loja-bot<tspan class="pt" fill="#7C4DFF">_</tspan></text>
+<text x="32" y="84" font-size="38" font-weight="700" fill="url(#t)">Balcão<tspan class="pt" fill="#7C4DFF">_</tspan></text>
 <text x="32" y="122" font-size="16" fill="#cfc4f5">Bot de loja no Discord com tickets, pagamento</text><text x="32" y="146" font-size="16" fill="#cfc4f5">plugável e setup idempotente.</text>
 <g><rect x="32" y="244" width="104" height="26" rx="13" fill="#00E5FF" fill-opacity=".16" stroke="#00E5FF" stroke-opacity=".7"/><text x="84" y="262" text-anchor="middle" font-size="13" fill="#efe9ff">TypeScript</text></g><g><rect x="144" y="244" width="79" height="26" rx="13" fill="#00E5FF" fill-opacity=".16" stroke="#00E5FF" stroke-opacity=".7"/><text x="184" y="262" text-anchor="middle" font-size="13" fill="#efe9ff">Discord</text></g><g><rect x="231" y="244" width="79" height="26" rx="13" fill="#00E5FF" fill-opacity=".16" stroke="#00E5FF" stroke-opacity=".7"/><text x="270" y="262" text-anchor="middle" font-size="13" fill="#efe9ff">Tickets</text></g><g><rect x="318" y="244" width="112" height="26" rx="13" fill="#00E5FF" fill-opacity=".16" stroke="#00E5FF" stroke-opacity=".7"/><text x="374" y="262" text-anchor="middle" font-size="13" fill="#efe9ff">PolyForm NC</text></g>
 </g>

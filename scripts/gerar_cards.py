@@ -17,8 +17,8 @@ def esc(s):
 
 def card(i, r):
     a1, a2 = ACENTOS[i % 4]
-    nome = r["repo"]
-    tam = min(30, int(500 / (len(nome) * 0.6)))
+    nome = r.get("nome", r["repo"])
+    tam = min(38, int(500 / (len(nome) * 0.6)))
     linhas = textwrap.wrap(r["desc"], 46)[:4]
     desc = "".join(
         f'<text x="32" y="{122 + k * 24}" font-size="16" fill="#cfc4f5">{esc(l)}</text>' for k, l in enumerate(linhas)
@@ -62,7 +62,7 @@ svg{{font-family:{FONTE}}}
 <rect width="600" height="300" fill="url(#bg)"/>
 <rect width="600" height="300" fill="url(#p)"/>
 <rect class="s" width="260" height="300" fill="{a1}" opacity=".10"/>
-<text x="32" y="42" font-size="13" fill="#8f7fd1">github.com/Dimasaas/</text>
+<text x="32" y="42" font-size="13" fill="#8f7fd1">github.com/Dimasaas/{esc(r["repo"])}</text>
 <circle cx="560" cy="37" r="6" fill="{cl}"/>
 <text x="32" y="84" font-size="{tam}" font-weight="700" fill="url(#t)">{esc(nome)}<tspan class="pt" fill="{a2}">_</tspan></text>
 {desc}

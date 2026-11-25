@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300" role="img" aria-label="ventoinha-macbook: Daemon de ventoinha para MacBook com Linux, o servidor do escritório.">
-<title>ventoinha-macbook</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300" role="img" aria-label="Guarita: Gateway MCP de leitura com escopo por pessoa, escrita em 2 etapas e auditoria.">
+<title>Guarita</title>
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d0624"/><stop offset="1" stop-color="#08143a"/></linearGradient>
 <linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2979FF"/><stop offset="1" stop-color="#B388FF"/></linearGradient>
@@ -20,11 +20,11 @@ svg{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
 <rect width="600" height="300" fill="url(#bg)"/>
 <rect width="600" height="300" fill="url(#p)"/>
 <rect class="s" width="260" height="300" fill="#2979FF" opacity=".10"/>
-<text x="32" y="42" font-size="13" fill="#8f7fd1">github.com/Dimasaas/</text>
-<circle cx="560" cy="37" r="6" fill="#3572A5"/>
-<text x="32" y="84" font-size="30" font-weight="700" fill="url(#t)">ventoinha-macbook<tspan class="pt" fill="#B388FF">_</tspan></text>
-<text x="32" y="122" font-size="16" fill="#cfc4f5">Daemon de ventoinha para MacBook com Linux, o</text><text x="32" y="146" font-size="16" fill="#cfc4f5">servidor do escritório.</text>
-<g><rect x="32" y="244" width="71" height="26" rx="13" fill="#2979FF" fill-opacity=".16" stroke="#2979FF" stroke-opacity=".7"/><text x="68" y="262" text-anchor="middle" font-size="13" fill="#efe9ff">Python</text></g><g><rect x="111" y="244" width="63" height="26" rx="13" fill="#2979FF" fill-opacity=".16" stroke="#2979FF" stroke-opacity=".7"/><text x="142" y="262" text-anchor="middle" font-size="13" fill="#efe9ff">Linux</text></g><g><rect x="182" y="244" width="79" height="26" rx="13" fill="#2979FF" fill-opacity=".16" stroke="#2979FF" stroke-opacity=".7"/><text x="222" y="262" text-anchor="middle" font-size="13" fill="#efe9ff">systemd</text></g><g><rect x="269" y="244" width="112" height="26" rx="13" fill="#00E5FF" fill-opacity=".16" stroke="#00E5FF" stroke-opacity=".7"/><text x="325" y="262" text-anchor="middle" font-size="13" fill="#efe9ff">PolyForm NC</text></g>
+<text x="32" y="42" font-size="13" fill="#8f7fd1">github.com/Dimasaas/guarita</text>
+<circle cx="560" cy="37" r="6" fill="#68a063"/>
+<text x="32" y="84" font-size="38" font-weight="700" fill="url(#t)">Guarita<tspan class="pt" fill="#B388FF">_</tspan></text>
+<text x="32" y="122" font-size="16" fill="#cfc4f5">Gateway MCP de leitura com escopo por pessoa,</text><text x="32" y="146" font-size="16" fill="#cfc4f5">escrita em 2 etapas e auditoria.</text>
+<g><rect x="32" y="244" width="54" height="26" rx="13" fill="#2979FF" fill-opacity=".16" stroke="#2979FF" stroke-opacity=".7"/><text x="59" y="262" text-anchor="middle" font-size="13" fill="#efe9ff">Node</text></g><g><rect x="94" y="244" width="46" height="26" rx="13" fill="#2979FF" fill-opacity=".16" stroke="#2979FF" stroke-opacity=".7"/><text x="117" y="262" text-anchor="middle" font-size="13" fill="#efe9ff">MCP</text></g><g><rect x="148" y="244" width="95" height="26" rx="13" fill="#2979FF" fill-opacity=".16" stroke="#2979FF" stroke-opacity=".7"/><text x="196" y="262" text-anchor="middle" font-size="13" fill="#efe9ff">Auditoria</text></g><g><rect x="251" y="244" width="112" height="26" rx="13" fill="#00E5FF" fill-opacity=".16" stroke="#00E5FF" stroke-opacity=".7"/><text x="307" y="262" text-anchor="middle" font-size="13" fill="#efe9ff">PolyForm NC</text></g>
 </g>
 <rect x="1.5" y="1.5" width="597" height="297" rx="17" fill="none" stroke="#2979FF" stroke-opacity=".35" stroke-width="1.5"/>
 <rect class="b" x="1.5" y="1.5" width="597" height="297" rx="17" fill="none" stroke="url(#g)" stroke-width="3" pathLength="1000" stroke-dasharray="190 810"/>
