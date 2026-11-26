@@ -123,7 +123,7 @@ def boot():
         txt.append(
             f'<text class="l" x="60" y="{y}"{fill} style="animation-delay:{d}s;animation-duration:{dur:.2f}s;animation-timing-function:steps({nch},end)">{conteudo}</text>'
         )
-    txt.append('<text class="l" x="60" y="240" style="animation-delay:4.5s;animation-duration:.4s;animation-timing-function:steps(8,end)"><tspan fill="@ambar@">&gt;</tspan><tspan fill="@texto@"> whoami</tspan></text>')
+    txt.append('<text class="l" x="60" y="240" style="animation-delay:4.5s;animation-duration:.4s;animation-timing-function:steps(19,end)"><tspan fill="@ambar@">&gt;</tspan><tspan fill="@texto@"> montar --operador</tspan></text>')
     nome = "João Victor Diamantino"
     txt.append(
         f'''<g class="fade" style="animation-delay:5.2s">

@@ -122,7 +122,7 @@ text{font-size:20px;white-space:pre}
 <text class="l" x="60" y="130" style="animation-delay:2.0s;animation-duration:0.64s;animation-timing-function:steps(29,end)"><tspan fill="#FFB86B">[ OK ]</tspan><tspan fill="#F5EEFF"> postgresql 17 … online</tspan></text>
 <text class="l" x="60" y="160" style="animation-delay:2.8s;animation-duration:0.73s;animation-timing-function:steps(33,end)"><tspan fill="#FFB86B">[ OK ]</tspan><tspan fill="#F5EEFF"> 31 tecnologias … carregadas</tspan></text>
 <text class="l" x="60" y="190" style="animation-delay:3.6s;animation-duration:1.08s;animation-timing-function:steps(49,end)"><tspan fill="#FFB86B">[ OK ]</tspan><tspan fill="#F5EEFF"> 3.600+ commits no último ano … sincronizados</tspan></text>
-<text class="l" x="60" y="240" style="animation-delay:4.5s;animation-duration:.4s;animation-timing-function:steps(8,end)"><tspan fill="#FFB86B">&gt;</tspan><tspan fill="#F5EEFF"> whoami</tspan></text>
+<text class="l" x="60" y="240" style="animation-delay:4.5s;animation-duration:.4s;animation-timing-function:steps(19,end)"><tspan fill="#FFB86B">&gt;</tspan><tspan fill="#F5EEFF"> montar --operador</tspan></text>
 <g class="fade" style="animation-delay:5.2s">
 <text class="g2" x="60" y="292" font-size="40" font-weight="700" fill="#4D8BFF">João Victor Diamantino</text>
 <text class="g1" x="60" y="292" font-size="40" font-weight="700" fill="#FF4FA3">João Victor Diamantino</text>

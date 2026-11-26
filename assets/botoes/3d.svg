@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="52" viewBox="0 0 220 52" role="img" aria-label="VERSÃO: 3D interativa">
+<title>VERSÃO: 3D interativa</title>
+<defs>
+<linearGradient id="f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#241046"/><stop offset="1" stop-color="#0a0418"/></linearGradient>
+<linearGradient id="b" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FF4FA3"/><stop offset="1" stop-color="#FF4FA3"/></linearGradient>
+<linearGradient id="r" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<clipPath id="c"><path d="M14 1H206L219 26.0L206 51H14L1 26.0Z"/></clipPath>
+</defs>
+<style>
+.ref{animation:ref 5s ease-in-out infinite}
+@keyframes ref{0%,70%{transform:translateX(-80px) skewX(-20deg)}100%{transform:translateX(260px) skewX(-20deg)}}
+@media (prefers-reduced-motion:reduce){.ref{animation:none;opacity:0}}
+</style>
+<path d="M14 1H206L219 26.0L206 51H14L1 26.0Z" fill="url(#f)"/>
+<g clip-path="url(#c)">
+<path d="M14 1L34 26.0L14 51" fill="#FF4FA3" fill-opacity=".12"/>
+<rect class="ref" x="0" y="0" width="40" height="52" fill="url(#r)"/>
+</g>
+<path d="M14 1H206L219 26.0L206 51H14L1 26.0Z" fill="none" stroke="url(#b)" stroke-width="1.6"/>
+<g transform="translate(24,14)" fill="none" stroke="#FF4FA3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12M21 7l-9 5-9-5"/></g>
+<text x="60" y="22" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="10" letter-spacing="2" fill="#C3A8E6">VERSÃO</text>
+<text x="60" y="39" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="14" font-weight="700" fill="#F5EEFF">3D interativa</text>
+</svg>

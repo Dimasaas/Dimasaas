@@ -4,10 +4,9 @@
 
 <br>
 
-<a href="https://www.linkedin.com/in/diamantinojv/"><img src="https://img.shields.io/badge/LinkedIn-diamantinojv-4D8BFF?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-<a href="https://1001imoveis.com"><img src="https://img.shields.io/badge/SITE-1001imoveis.com-7C5CFF?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Site"></a>
-<img src="https://komarev.com/ghpvc/?username=Dimasaas&style=for-the-badge&color=FF4FA3&label=VISITAS" alt="Visitas">
-<a href="https://dimasaas.github.io/Dimasaas/"><img src="https://img.shields.io/badge/%E2%96%B6-VERS%C3%83O%203D-FF4FA3?style=for-the-badge" alt="Versão 3D"></a>
+<a href="https://www.linkedin.com/in/diamantinojv/"><img src="assets/botoes/linkedin.svg" alt="LinkedIn: diamantinojv" height="52"></a>
+<a href="https://1001imoveis.com"><img src="assets/botoes/site.svg" alt="Site: 1001imoveis.com" height="52"></a>
+<a href="https://dimasaas.github.io/Dimasaas/"><img src="assets/botoes/3d.svg" alt="Versão 3D interativa" height="52"></a>
 
 <br><br>
 
@@ -71,7 +70,7 @@ Projetos que eu escrevi e mantenho. Clique no cartão para abrir o repositório.
 
 <sub>Os projetos Plotline, Gatehouse, Breather, Shopkeep, Penny e Breeze usam a licença **PolyForm Noncommercial 1.0.0**: dá para ler e estudar à vontade, mas não para comercializar.</sub>
 
-## 🧭 Como eu trabalho
+## 📏 Regras do código
 
 ```text
 01  a regra mora no código, com teste
@@ -116,4 +115,4 @@ $ sudo contratar --joao
 
 <br>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF4FA3,50:7C5CFF,100:4D8BFF&height=120&section=footer" alt="" width="100%">
+<img src="assets/rodape.svg" alt="DIAMANTINO.OS: fim da transmissão" width="100%">
